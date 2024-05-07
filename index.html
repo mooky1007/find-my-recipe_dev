@@ -132,7 +132,7 @@
 													button-minus></button>
 												<div class="quantity svelte-1nhbbpw">
 													<input name="vertuo_reboost_quantity_value" type="number" min="0"
-														class="svelte-1nhbbpw" value="0" id="sku-count">
+														class="svelte-1nhbbpw" value="0" id="sku-count" readonly>
 												</div>
 												<button type="button" class="plus svelte-1nhbbpw" button-plus></button>
 												<button type="button" class="buy svelte-1nhbbpw" button-add-cart>
@@ -195,46 +195,22 @@
 				{
 					title: '어떤 온도로 즐기시나요?',
 					cards: [
-						{
-							id: 'h',
-							text: '따뜻하게',
-							imgUrl: './img/hot.jpg',
-						},
-						{
-							id: 'i',
-							text: '차갑게',
-							imgUrl: './img/ice.jpg',
-						},
+						{ id: 'h', text: '따뜻하게', imgUrl: './img/hot.jpg' },
+						{ id: 'i', text: '차갑게', imgUrl: './img/ice.jpg', },
 					],
 				},
 				{
 					title: '밀크 레시피로 즐기시나요?',
 					cards: [
-						{
-							id: 'b',
-							text: '블랙으로 깔끔하게',
-							imgUrl: './img/black.jpg',
-						},
-						{
-							id: 'm',
-							text: '우유와 함께 부드럽게',
-							imgUrl: './img/milk.jpg',
-						},
+						{ id: 'b', text: '블랙으로 깔끔하게', imgUrl: './img/black.jpg', },
+						{ id: 'm', text: '우유와 함께 부드럽게', imgUrl: './img/milk.jpg', },
 					],
 				},
 				{
 					title: '어떤 느낌의 음료를 원하세요?',
 					cards: [
-						{
-							id: 'f',
-							text: '산뜻한(프루티)',
-							imgUrl: './img/fruity.jpg',
-						},
-						{
-							id: 'n',
-							text: '고소한(너티)',
-							imgUrl: './img/nutty.jpg',
-						},
+						{ id: 'f', text: '산뜻한(프루티)', imgUrl: './img/fruity.jpg', },
+						{ id: 'n', text: '고소한(너티)', imgUrl: './img/nutty.jpg', },
 					],
 				},
 			],

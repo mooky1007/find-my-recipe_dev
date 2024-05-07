@@ -6,7 +6,6 @@ class RecipeFinder {
         this.type = 'vl';
         this.el = {
             container: document.querySelector('[data-findRecipe-container]'),
-
             stepDot: document.querySelector('[data-step]'),
             stepTitle: document.querySelector('[data-step-title]'),
             stepTitleNumber: document.querySelector('[data-step-title-number]'),
@@ -15,11 +14,9 @@ class RecipeFinder {
             stepCont: document.querySelector('.step-cont'),
             choiceCont: document.querySelector('.choice-cont'),
             resultCont: document.querySelector('.result-cont'),
-
             choiceTitle: document.querySelector('[data-choice-title]'),
             choiceSubTitle: document.querySelector('[data-choice-sub-title]'),
             choiceCards: document.querySelector('[data-choice-cards]'),
-
             resultTitle: document.querySelector('[data-result-title]'),
             resultSubTitle: document.querySelector('[data-result-sub-title]'),
             resultDesc: document.querySelector('[data-result-desc]'),
@@ -27,15 +24,12 @@ class RecipeFinder {
             resultIngredientsTitle: document.querySelector('[data-result-ingredients-title]'),
             resultIngredientsDesc: document.querySelector('[data-result-ingredients-desc]'),
             resultHowToMake: document.querySelector('[data-result-how-to-make]'),
-
             restartButton: document.querySelector('[button-restart]'),
             shareButton: document.querySelector('[button-share]'),
             skuCount: document.querySelector('#sku-count'),
             addCartButton: document.querySelector('[button-add-cart]'),
-
             plusButton: document.querySelector('[button-plus]'),
             minusButton: document.querySelector('[button-minus]'),
-
             otherType: document.querySelector('[data-other-type]'),
         };
 
