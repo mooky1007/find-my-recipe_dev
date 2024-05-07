@@ -5,6 +5,8 @@ class RecipeFinder {
         this.stepResult = '';
         this.type = 'vl';
         this.el = {
+            container: document.querySelector('[data-findRecipe-container]'),
+
             stepDot: document.querySelector('[data-step]'),
             stepTitle: document.querySelector('[data-step-title]'),
             stepTitleNumber: document.querySelector('[data-step-title-number]'),
@@ -162,16 +164,68 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
         this.renderAll();
     }
 
-    nextStep() {
+    async nextStep(direction) {
+        await new Promise((resolve) => {
+            const targetCard = this.el.stepCards.querySelector(`.${direction}`);
+            const otherCard = this.el.stepCards.querySelector(`.${direction === 'left' ? 'right' : 'left'}`);
+            targetCard.style.left = '50%';
+            targetCard.style.transition = 'all 0.3s';
+            targetCard.style.transform = 'translateX(-50%)';
+
+            otherCard.style.transition = 'opacity 0.3s';
+            otherCard.style.opacity = 0;
+            setTimeout(() => {
+                resolve();
+            }, 400);
+        });
+
+        await new Promise((resolve) => {
+            this.el.stepCards.style.position = 'relative';
+            this.el.stepCards.style.opacity = 0;
+            this.el.stepCards.style.transition = 'all 0.3s';
+            this.el.stepCards.style.transform = 'translateY(-20px)';
+
+            setTimeout(() => {
+                resolve();
+            }, 300);
+        });
+
         if (this.step === 2) {
             this.status = 1;
             this.render.page();
             this.render.choiceTitle();
             this.render.choice();
+
+            this.el.stepCards.style.position = 'static';
+            this.el.stepCards.style.opacity = 1;
+            this.el.stepCards.style.transition = 'all 0.3s';
+            this.el.stepCards.style.transform = 'translateY(0)';
+            this.el.stepCards.style.transform = 'none';
+            
             return;
         }
         this.step++;
         this.renderAll();
+
+        await new Promise((resolve) => {
+            this.el.stepCards.style.transform = 'translateY(40px)';
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        });
+
+
+        await new Promise((resolve) => {
+            this.el.stepCards.style.position = 'static';
+            this.el.stepCards.style.opacity = 1;
+            this.el.stepCards.style.transition = 'all 0.3s';
+            this.el.stepCards.style.transform = 'translateY(0)';
+            this.el.stepCards.style.transform = 'none';
+
+            setTimeout(() => {
+                resolve();
+            }, 300);
+        });
     }
 
     prevStep() {
@@ -182,7 +236,29 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
         this.renderAll();
     }
 
-    finalStep(type) {
+    async finalStep(type) {
+        await new Promise((resolve) => {
+            const targetCard = this.el.choiceCards.querySelector(`.${type}`);
+            const otherCard = this.el.choiceCards.querySelector(`.${type === 'ol' ? 'vl' : 'ol'}`);
+
+            targetCard.style.transition = 'width 0.5s';
+            otherCard.style.transition = 'width 0.5s';
+            
+            targetCard.style.zIndex = 2;
+            otherCard.style.zIndex = 1;
+
+            if(type === 'vl'){
+                targetCard.style.left = 'auto';
+                targetCard.style.right = '0';
+            }
+
+            targetCard.style.width = '100%';
+
+            setTimeout(() => {
+                resolve();
+            }, 750);
+        });
+
         this.status = 2;
         this.type = type;
 
@@ -236,9 +312,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 
     renderPrevButton() {
         if (this.step === 0) {
-            this.el.prevButton.style.display = 'none';
+            this.el.prevButton.style.visibility = 'hidden';
         } else {
-            this.el.prevButton.style.display = 'block';
+            this.el.prevButton.style.visibility = 'visible';
         }
     }
 
@@ -277,18 +353,38 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 
         a.addEventListener('click', () => {
             this.stepResult += cards[0].id;
-            this.nextStep();
+            this.nextStep('left');
         });
 
         a2.addEventListener('click', () => {
             this.stepResult += cards[1].id;
-            this.nextStep();
+            this.nextStep('right');
         });
 
         stepCards.append(left, right);
     }
 
-    renderChoice() {
+    async renderChoice() {
+        await new Promise((resolve) => {
+            this.el.choiceCont.style.transition = 'all 0.3s';
+            this.el.choiceCont.style.transform = 'translateY(30px)';
+            this.el.choiceCont.style.opacity = 0;
+            
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        });
+        
+        await new Promise((resolve) => {
+
+            this.el.choiceCont.style.transform = 'translateY(0)';
+            this.el.choiceCont.style.opacity = 1;
+
+            setTimeout(() => {
+                resolve();
+            }, 300);
+        });
+
         this.el.choiceCards.innerHTML = '';
 
         const div = document.createElement('div');
@@ -350,7 +446,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
     }
 
     renderPage() {
-        const { stepCont, choiceCont, resultCont } = this.el;
+        const { container, stepCont, choiceCont, resultCont } = this.el;
 
         stepCont.style.display = 'none';
         choiceCont.style.display = 'none';
@@ -359,6 +455,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
         const statusPages = [stepCont, choiceCont, resultCont];
 
         statusPages[this.status].style.display = 'block';
+
+        if(this.status === 2){
+            container.style.display = 'none';
+        }else{
+            container.style.display = 'block';
+        }
     }
 
     renderOtherTypeButton() {

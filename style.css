@@ -141,13 +141,13 @@ body {
 .findRecipe-container .step-cont .step-wr .card {display:block; cursor:pointer; width:100%; border-radius:20px; overflow:hidden; position:relative;}
 .findRecipe-container .step-cont .step-wr .card:before{content:''; width:100%; height:50%; position:absolute; left:0; top:0;     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);}
 .findRecipe-container .step-cont .step-wr .card p{position:absolute; top:0; font-size: 24px; width:100%; color: #fff; padding-top: 40px; font-weight: 600;}
-.findRecipe-container .step-cont .step-wr .left{  width: 47%;   height: 100%;  position: relative;  z-index: 1;}
+.findRecipe-container .step-cont .step-wr .left{  width: 47%;   height: 100%;  position: relative;  z-index: 1; left: 0;}
 .findRecipe-container .step-cont .step-wr .right{  width: 47%;height: 100%; position: relative; left: 53%;top: -100%;z-index: 2;}  
 
 
 /* choice */
 .findRecipe-container .choice-cont .recipe-choice {width:90%; position:relative; max-width:740px; margin:40px auto 0; height:435px; border-radius:20px; overflow:hidden;}
-.findRecipe-container .choice-cont .recipe-choice .card{  width: 50%;   height: 100%;  position: absolute;  z-index: 1; transition:all ease .6s;}
+.findRecipe-container .choice-cont .recipe-choice .card{  width: 50%;   height: 100%;  position: absolute;  z-index: 1; transition:all ease .6s; left: 0;}
 .findRecipe-container .choice-cont .recipe-choice .card a{display:block; width:100%; height:100%;}
 .findRecipe-container .choice-cont .recipe-choice .card a:before{content:''; width:100%; height:100%;  background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), transparent); position:absolute; left:0; top:0; transition:all ease .3s; opacity:0.7;}
 .findRecipe-container .choice-cont .recipe-choice .card p{position:absolute; left:0; top:50%; transform:translateY(-50%); width:100%; font-size: 24px;font-weight: 600; text-align: center; transition:all ease .3s;}
