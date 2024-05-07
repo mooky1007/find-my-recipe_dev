@@ -434,7 +434,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 
         resultImage.src = choiceData[this.stepResult][this.type].resultImgSrc;
 
-        resultIngredientsTitle.innerHTML = choiceData[this.stepResult][this.type].ingredientsTitle + '캡슐 1개';
+        resultIngredientsTitle.innerHTML = choiceData[this.stepResult][this.type].ingredientsTitle + ' 캡슐 1개';
         resultIngredientsDesc.innerHTML = choiceData[this.stepResult][this.type].ingredientsDesc;
 
         resultHowToMake.innerHTML = '';
