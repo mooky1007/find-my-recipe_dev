@@ -270,6 +270,8 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
         const queryString = `result=${this.stepResult}&type=${this.type}`;
         const url = `${window.location.origin}${window.location.pathname}?${queryString}`;
         history.pushState({ path: url }, '', url);
+
+        window.scrollTo(0, 0);
     }
 
     renderAll() {
