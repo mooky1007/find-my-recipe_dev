@@ -169,14 +169,14 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
             const targetCard = this.el.stepCards.querySelector(`.${direction}`);
             const otherCard = this.el.stepCards.querySelector(`.${direction === 'left' ? 'right' : 'left'}`);
             targetCard.style.left = '50%';
-            targetCard.style.transition = 'all 0.3s';
+            targetCard.style.transition = 'all 0.5s';
             targetCard.style.transform = 'translateX(-50%)';
 
-            otherCard.style.transition = 'opacity 0.3s';
+            otherCard.style.transition = 'opacity 0.5s';
             otherCard.style.opacity = 0;
             setTimeout(() => {
                 resolve();
-            }, 400);
+            }, 600);
         });
 
         await new Promise((resolve) => {
