@@ -1,218 +1,179 @@
 <!-- 컨텐츠 이동 시 삭제 -->
-<!doctype html>  
+<!doctype html>
 <html lang="ko">
-<head> 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://www.nespresso.com/_ui/generated/crema/styles.1596b6b5ba517472f873.css">
-	<link rel="stylesheet" href="https://www.nespresso.com/_ui/generated/responsiveLoadedFirst.css?v=fd96da20a0167484301a7a19c2a1ec4e246299f7">
-	<link rel="stylesheet" href="https://www.nespresso.com/shared_res/agility/next-components/foundations/v1.1/css/foundations.css">
-	<link rel="stylesheet" href="style.css"> 
-<!-- 컨텐츠 이동 시 삭제 -->
+	<link rel="stylesheet"
+		href="https://www.nespresso.com/_ui/generated/responsiveLoadedFirst.css?v=fd96da20a0167484301a7a19c2a1ec4e246299f7">
+	<link rel="stylesheet"
+		href="https://www.nespresso.com/shared_res/agility/next-components/foundations/v1.1/css/foundations.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="./recipe_finder.js"></script>
+	<!-- 컨텐츠 이동 시 삭제 -->
 
- 
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'gtmDataObject', 'GTM-KH9FPVL');</script>
+	<!-- End Google Tag Manager -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','gtmDataObject','GTM-KH9FPVL');</script>
-<!-- End Google Tag Manager -->
- 
- 
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH9FPVL" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH9FPVL"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<div id="main-container">
-	<main id="main">
-		<span id="a11y-main-area" class="visually-hidden" tabindex="-1">메인 컨텐츠를 보고 계십니다.</span>
-		<div id="block-8829160936949" class="free-html" data-label="">
-			<h1 id="hidden-main-heading" class="visually-hidden lang-change" data-kr="레시피 취향 테스트 | 커피 레시피 | 네스프레소 코리아 " data-en="Coffee Machine Comparison | Machine Guide | Nespresso Korea" tabindex="-1">레시피 취향 테스트 | 커피 레시피 | 네스프레소 코리아 </h1>
-			<div id="findRecipe" class="ko">
-				<section role="main" class="common-container">
-					<div class="findRecipe2024-wrap">
-						<div class="findRecipe-container"> 
-							<div class="section-tit"> 
-								<div class="tit-h3 lang-change"
-								data-kr="3스텝으로 찾는" data-en="3스텝으로 찾는 영문"></div>
-								<div class="tit-h2">내게 맞는 레시피 찾기</div>  
-							</div>  
-							<!-- 스텝 선택하기 -->
-							<div class="step-cont box-inner">  
-								<div class="step-progress">	
-									<ul>
-										<li class="active">
-											<span>얼음</span>
-										</li> 
-										<li>
-											<span>우유</span>
-										</li> 
-										<li>
-											<span>취향</span>
-										</li> 
-									</ul>
+	<div id="main-container">
+		<main id="main">
+			<span id="a11y-main-area" class="visually-hidden" tabindex="-1">메인 컨텐츠를 보고 계십니다.</span>
+			<div id="block-8829160936949" class="free-html" data-label="">
+				<h1 id="hidden-main-heading" class="visually-hidden lang-change"
+					data-kr="레시피 취향 테스트 | 커피 레시피 | 네스프레소 코리아 "
+					data-en="Coffee Machine Comparison | Machine Guide | Nespresso Korea" tabindex="-1">레시피 취향 테스트 | 커피
+					레시피 | 네스프레소 코리아 </h1>
+				<div id="findRecipe" class="ko">
+					<section role="main" class="common-container">
+						<div class="findRecipe2024-wrap">
+							<div class="findRecipe-container">
+								<div class="section-tit">
+									<div class="tit-h3 lang-change" data-kr="3스텝으로 찾는" data-en="3스텝으로 찾는 영문"></div>
+									<div class="tit-h2">내게 맞는 레시피 찾기</div>
 								</div>
-								<div class="tit-h4">STEP1</div>
-								<div class="tit-h3">어떤 느낌의 음료를 원하세요?</div>
-								<!-- 1 step -->
-								<div id="step01" class="step-wr">
-									<div class="left">
-										<a class="card">
-											<p>따뜻하게</p>
-											<img src="img/hot.jpg" alt="">
-										</a> 
-									</div>
-									<div class="right"> 
-										<a class="card">
-											<p>차갑게</p>
-											<img src="img/ice.jpg" alt="">
-										</a> 
-									</div>
-								</div>
-								<!-- 2 step -->
-								<div id="step02" class="step-wr">
-									<div class="left">
-										<a class="card">
-											<p>블랙으로 깔끔하게</p>
-											<img src="img/black.jpg" alt="">
-										</a> 
-									</div>
-									<div class="right"> 
-										<a class="card">
-											<p>우유와 함께 부드럽게</p>
-											<img src="img/milk.jpg" alt="">
-										</a> 
-									</div>
-								</div>
-								<!-- 3 step -->
-								<div id="step03" class="step-wr">
-									<div class="left">
-										<a class="card">
-											<p>산뜻한(프루티)</p>
-											<img src="img/fruity.jpg" alt="">
-										</a> 
-									</div>
-									<div class="right"> 
-										<a class="card">
-											<p> 고소한(너티)</p>
-											<img src="img/nutty.jpg" alt="">
-										</a> 
-									</div>
-								</div>
-								<div class="btn-wr">
-									<a href="">이전으로</a>
-								</div>
-							</div>
-							<!-- 스텝 선택하기 end -->
-							<!-- 레시피 선택하기 -->
-							<div class="choice-cont box-inner"> 
-								<div class="box-tit">
-									<div class="tit-h3">키아로 샤케라토</div>
-									<div class="tit-h4">CHIARO SHAKERATO</div> 
-								</div>  
-								<div class="recipe-choice">
-									<div class="card ol">
-										<a href="">
-											<p>
-												<img src="img/type_ol.png" alt="">
-												<span>오리지널 레시피 보기</span> 
-											</p> 
-											<img src="img/chiaro_ol.jpg" alt="">
-										</a> 
-									</div>
-									<div class="card vl">
-										<a href="">
-											<p>
-												<img src="img/type_vl.png" alt="">
-												<span>버츄오 레시피 보기</span> 
-											</p> 
-											<img src="img/chiaro_vl.jpg" alt="">
-										</a> 
-									</div>
-								</div>
-							</div>
-							<!-- 레시피 선택하기 end -->
-						</div>
-						<!-- 결과 -->
-						<div class="findRecipe-container result-cont"> 
-							<div class="box-inner"> 
-								<div class="box-tit">
-									<div class="tit-h2">키아로 샤케라토</div>
-									<div class="tit-h4">CHIARO SHAKERATO</div> 
-									<p>강렬한 풍미의 더블 에스프레소 커피를 얼음과 같이 쉐이킹하여
-									보다 부드럽고 시원하게 즐길 수 있는 레시피</p>
-								</div>  
-								<div class="result-img">
-									<img src="img/chiaro_result.jpg" alt="">
-								</div>
-								<div class="result-recipe">
-									<div class="ingredients">
-										<div class="tit-h4">INGREDIENTS</div>
-										<div class="tit-h3">더블 에스프레소 키아로 캡슐 1개</div>
-										<p>쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음
-										리빌 에스프레소 마일드, 쉐이커</p>
-									</div>
-									<div class="how-to-make">
-										<div class="tit-h4">HOW TO MAKE</div>  
-										<ul>
-											<li>
-												<strong>1.</strong>
-												더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3 스틱을 더해 잘 섞어주세요.
+								<!-- 스텝 선택하기 -->
+								<div class="step-cont box-inner">
+									<div class="step-progress">
+										<ul data-step>
+											<li class="active">
+												<span>얼음</span>
 											</li>
 											<li>
-												<strong>2.</strong>
-												쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong> 에 준비한 커피를 붓고 
-												30초 이상 강하게 흔들어 주세요.
-												<span>* 내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을 
-												   이용하세요.</span>
+												<span>우유</span>
 											</li>
 											<li>
-												<strong>1.</strong>
-												쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 
-												브라운 슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
-												<span>* 샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 
-												   필터 부분으로 커피를 부어주세요.</span>
+												<span>취향</span>
 											</li>
 										</ul>
-									</div> 
+									</div>
+									<div class="tit-h4" data-step-title-number>STEP1</div>
+									<div class="tit-h3" data-step-title>어떤 느낌의 음료를 원하세요?</div>
+									<!-- 1 step -->
+									<div class="step-wr" data-step-cards>
+									</div>
+									<div class="btn-wr" button-prev>
+										<a>이전으로</a>
+									</div>
+								</div>
+								<!-- 스텝 선택하기 end -->
+								<!-- 레시피 선택하기 -->
+								<div class="choice-cont box-inner">
+									<div class="box-tit">
+										<div class="tit-h3" data-choice-title>키아로 샤케라토</div>
+										<div class="tit-h4" data-choice-sub-title>CHIARO SHAKERATO</div>
+									</div>
+									<div class="recipe-choice" data-choice-cards>
+									</div>
+								</div>
+								<!-- 레시피 선택하기 end -->
+							</div>
+							<!-- 결과 -->
+							<div class="result-cont findRecipe-container">
+								<div class="box-inner">
+									<div class="box-tit">
+										<div class="tit-h2" data-result-title>키아로 샤케라토</div>
+										<div class="tit-h4" data-result-sub-title>CHIARO SHAKERATO</div>
+										<p data-result-desc>강렬한 풍미의 더블 에스프레소 커피를 얼음과 같이 쉐이킹하여
+											보다 부드럽고 시원하게 즐길 수 있는 레시피</p>
+									</div>
+									<div class="result-img" data-result-image>
+										<img src="img/chiaro_result.jpg" alt="">
+									</div>
+									<div class="result-recipe">
+										<div class="ingredients">
+											<div class="tit-h4">INGREDIENTS</div>
+											<div class="tit-h3" data-result-ingredients-title>더블 에스프레소 키아로</div>
+											<p data-result-ingredients-desc>쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음
+												리빌 에스프레소 마일드, 쉐이커</p>
+										</div>
+										<div class="how-to-make">
+											<div class="tit-h4">HOW TO MAKE</div>
+											<ul data-result-how-to-make>
+												<li>
+													<strong>1.</strong>
+													더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3 스틱을 더해 잘 섞어주세요.
+												</li>
+												<li>
+													<strong>2.</strong>
+													쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong> 에 준비한 커피를 붓고
+													30초 이상 강하게 흔들어 주세요.
+													<span>* 내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을
+														이용하세요.</span>
+												</li>
+												<li>
+													<strong>1.</strong>
+													쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에
+													브라운 슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+													<span>* 샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프
+														필터 부분으로 커피를 부어주세요.</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="btn-wr">
+										<div id="recipe-addtobag">
+											<fieldset class="svelte-1nhbbpw">
+												<button type="button" class="minus svelte-1nhbbpw"
+													button-minus></button>
+												<div class="quantity svelte-1nhbbpw">
+													<input name="vertuo_reboost_quantity_value" type="number" min="0"
+														class="svelte-1nhbbpw" value="0" id="sku-count">
+												</div>
+												<button type="button" class="plus svelte-1nhbbpw" button-plus></button>
+												<button type="button" class="buy svelte-1nhbbpw" button-add-cart>
+													<img src="img/ico_cart.png" alt="">
+												</button>
+											</fieldset>
+										</div>
+										<a button-restart><img src="img/ico_reset.png" alt="">다시하기</a>
+										<a button-share><img src="img/ico_link.png" alt="">공유하기</a>
+									</div>
+									<div class="next-btn" data-other-type>
+										<a><img src="img/btn_next.png" alt=""><img src="img/type_vl.png" alt=""></a>
+									</div>
 								</div>
 								<div class="btn-wr">
-									<div id="recipe-addtobag">
-										<fieldset class="svelte-1nhbbpw">
-											<button type="button" class="minus svelte-1nhbbpw"></button> 
-											<div class="quantity svelte-1nhbbpw">
-												<input name="vertuo_reboost_quantity_value" type="number" min="0" class="svelte-1nhbbpw">
-											</div> 
-											<button type="button" class="plus svelte-1nhbbpw"></button> 
-											<button type="button" class="buy svelte-1nhbbpw">
-												<img src="img/ico_cart.png" alt="">
-											</button>
-										</fieldset>
-									</div> 
-									<a href=""><img src="img/ico_reset.png" alt="">다시하기</a>
-									<a href=""><img src="img/ico_link.png" alt="">공유하기</a>
-								</div> 
-								<div class="next-btn">
-									<a href=""><img src="img/btn_next.png" alt=""><img src="img/type_vl.png" alt=""></a>
+									<a href="">다른 레시피 보러가기 <img src="img/ico_right.png" alt=""></a>
 								</div>
-							</div> 
-							<div class="btn-wr">
-								<a href="">다른 레시피 보러가기 <img src="img/ico_right.png" alt=""></a>
-							</div> 
+							</div>
+							<!-- 결과 end -->
 						</div>
-						<!-- 결과 end -->
-					</div>    
-				</section>
+					</section>
+				</div>
 			</div>
-		</div>
-	</main>
-</div> 
-<script>
+		</main>
+	</div>
 
+	<style>
+		[name='vertuo_reboost_quantity_value'] {
+			/* 인풋 안보여서 임시로 추가함. 나중에 css 작업 후 제거 */
+			min-width: 40px;
+		}
+
+		input::-webkit-inner-spin-button,
+		input::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			user-select: none;
+			margin: 0;
+		}
+	</style>
+
+	<script>
 		const lang = window.location.pathname.split('/')[2];
 		//const lang = 'en';
 
@@ -227,6 +188,713 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				let content = item.getAttribute("data-kr");
 				item.innerHTML = content;
 			}
-
 		});
-</script>
+
+		const recipeFinder = new RecipeFinder({
+			step: [
+				{
+					title: '어떤 느낌의 음료를 원하세요?',
+					cards: [
+						{
+							id: 'h',
+							text: '따뜻하게',
+							imgUrl: './img/hot.jpg',
+						},
+						{
+							id: 'i',
+							text: '차갑게',
+							imgUrl: './img/ice.jpg',
+						},
+					],
+				},
+				{
+					title: '어떤 느낌의 음료를 원하세요?',
+					cards: [
+						{
+							id: 'b',
+							text: '블랙으로 깔끔하게',
+							imgUrl: './img/black.jpg',
+						},
+						{
+							id: 'm',
+							text: '우유와 함께 부드럽게',
+							imgUrl: './img/milk.jpg',
+						},
+					],
+				},
+				{
+					title: '어떤 느낌의 음료를 원하세요?',
+					cards: [
+						{
+							id: 'f',
+							text: '산뜻한(프루티)',
+							imgUrl: './img/fruity.jpg',
+						},
+						{
+							id: 'n',
+							text: '고소한(너티)',
+							imgUrl: './img/nutty.jpg',
+						},
+					],
+				},
+			],
+			result: {
+				ibf: {
+					ol: {
+						sku: '7748.40',
+						title: '아이스 자몽프레소 ',
+						subTitle: 'ICE GRAPEFRUIT FREDDO',
+						desc: '나른한 오후에 만끽하는 청량함',
+						ingredientsTitle: '리스트레토',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7223.60',
+						title: '루비 코스모폴리탄',
+						subTitle: 'RUBY COSMOPOLITAN',
+						desc: '매혹적인 석류와 상쾌한 아이스 커피의 랑데부 (TBD)',
+						ingredientsTitle: '아이스 레제로',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				ibn: {
+					ol: {
+						sku: '7586.40',
+						title: '마자그랑',
+						subTitle: 'MAJAGRANG',
+						desc: '고소함과 상큼함의 이색적인 조화',
+						ingredientsTitle: '볼루토',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7224.60',
+						title: '키아로 샤케라토',
+						subTitle: 'CHIARO SHAKERATO',
+						desc: '부드럽고 시원하게 즐기는 강렬한 한잔',
+						ingredientsTitle: '더블 에스프레소 키아로',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				imf: {
+					ol: {
+						sku: '7750.40',
+						title: '카페 살렌티노',
+						subTitle: 'CAFE SALANTINO',
+						desc: '색다르게 즐기는 아이스 레시피',
+						ingredientsTitle: '이스탄불',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7185.60',
+						title: '코코 피나콜라다',
+						subTitle: 'COCO PINACOLADA',
+						desc: '파인애플과 코코넛이 부르는 열대섬으로의 초대(TBD)',
+						ingredientsTitle: '코코넛향 커피',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				imn: {
+					ol: {
+						sku: '7738.40',
+						title: '코코넛 돌체 라테',
+						subTitle: 'COCONUT DOLCE LATTE',
+						desc: '더위를 식히는 이국적인 아이스 커피',
+						ingredientsTitle: '코코넛향 커피',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7019.60',
+						title: '써니 아포가토',
+						subTitle: 'SUNNY AFFOGATO',
+						desc: '따듯한 햇살은 머금은 눈부신 한잔 (TBD)',
+						ingredientsTitle: '써니 아몬드 바닐라',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				hbf: {
+					ol: {
+						sku: '7723.70',
+						title: '허니 블랙',
+						subTitle: 'HONEY BLACK',
+						desc: '소풍에 낭만을 더해보세요!',
+						ingredientsTitle: '니카라과',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7220.60',
+						title: '페퍼민트 아메리카노',
+						subTitle: 'PEPPERMINT AMERICANO',
+						desc: '아침을 상쾌하게 깨우는 따듯한 룽고 커피',
+						ingredientsTitle: '이니지오',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				hbn: {
+					ol: {
+						sku: '7757.40',
+						title: '버터 스카치 아메리카노',
+						subTitle: 'BUTTER SCOTCH AMERICANO',
+						desc: '달콤한 풍미가 돋보이는 스윗 아메리카노',
+						ingredientsTitle: '부에노스 아이리스 룽고',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7219.60',
+						title: '돌체리카노',
+						subTitle: 'DOLCERICANO',
+						desc: '부드럽고 달콤하게 입 안을 깨우는 블랙 커피',
+						ingredientsTitle: '더블 에스프레소 돌체',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				hmf: {
+					ol: {
+						sku: '7759.40',
+						title: '레몬 크림 라테',
+						subTitle: 'LEMON CREAM LATTE',
+						desc: '부드럽게 감싸는 새콤달콤함으로 향기로운 시간',
+						ingredientsTitle: '상하이 룽고',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7276.60',
+						title: '루비 오렌지 비앙코',
+						subTitle: 'RUBY ORANGE BIANCO',
+						desc: '달콤함과 상큼함이 조화로운 매혹적인 한잔',
+						ingredientsTitle: '엘살바도르',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+				hmn: {
+					ol: {
+						sku: '7765.40',
+						title: '코코 리치 화이트',
+						subTitle: 'COCO RICH WHITE',
+						desc: '나를 위한 달콤하고 부드러운 선물',
+						ingredientsTitle: '아르페지오',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_ol.jpg',
+					},
+					vl: {
+						sku: '7229.60',
+						title: '미숫가루 라테',
+						subTitle: 'MISUTGARU LATTE',
+						desc: '비건 레시피로 즐기는 부드러럽고 고소한 조화',
+						ingredientsTitle: '비앙코 도피오 포 밀크',
+						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌<br>에스프레소 마일드, 쉐이커',
+						resultImgSrc: './img/chiaro_result.jpg',
+						howToMake: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                더블 에스프레소 키아로 커피(80 ml)를 먼저 추출한 뒤 브라운 슈거 2~3<br>스틱을 더해 잘 섞어주세요.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                쉐이커에 2/3 가량 얼음을 먼저 채우고 그 위로 <strong>1.</strong>에 준비한 커피를 붓고<br>
+                                30초 이상 강하게 흔들어 주세요.
+                                <span>
+                                    내용물이 새지 않도록 쉐이커를 꼭 닫고 쉐이커를 잡을 때는 수건이나 장갑 등을<br>
+                                    이용하세요.
+                                </span>
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운<br>
+                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                <span>
+                                    샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터<br>
+                                    부분으로 커피를 부어주세요.
+                                </span>
+                            </li>
+                        `,
+						],
+						imgSrc: './img/chiaro_vl.jpg',
+					},
+				},
+			}
+		});
+	</script>
