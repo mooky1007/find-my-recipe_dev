@@ -1,0 +1,677 @@
+
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 100;
+	src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-100.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-100.woff") format("woff")
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 300;
+	src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-300.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-300.woff") format("woff")
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 400;
+	src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-regular.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-regular.woff") format("woff")
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 500;
+	src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-500.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-500.woff") format("woff")
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 700;
+	src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-700.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-700.woff") format("woff")
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 900;
+	src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff") format("woff")
+} 
+html {
+	font-size: clamp(5px, 1.302vw, 10px);
+}
+
+body {
+	line-height: 1;
+	word-break: keep-all;
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif;
+	color: #fff;
+	font-size: .75em;
+	line-height: 1.125rem;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%
+}
+
+.visually-hidden {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+	text-indent: -100000px;
+	white-space: nowrap
+}
+
+
+/********************************************************** setting **********************************************************/
+#findRecipe {
+	font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif;
+	color: #000;
+	line-height: 1.1;
+	background-color: #fff;
+	min-height: 100vh;
+	letter-spacing: -0.05em;
+	word-break: keep-all;
+}
+
+#findRecipe * {
+	font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif;
+}
+
+#findRecipe *,
+#findRecipe *:before,
+*:after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+#findRecipe .blind {
+	position: absolute !important;
+	overflow: hidden !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	clip: rect(0, 0, 0, 0);
+	border: 0 !important;
+	font-size: 1px
+}
+
+
+
+/********************************************************** main **********************************************************/
+
+
+/* findRecipe common */
+.findRecipe2024-wrap{ background:url('img/bg_stripe.jpg'); line-height: 1.4;}   
+.findRecipe-container{position:relative; z-index:2; padding:130px 0; text-align: center;}
+.findRecipe-container::before{content:''; width:100%; height:100%; background:url('img/bg_top.png') no-repeat top center / 100% auto; position:absolute; left:0; top:0; z-index:-1;}
+.findRecipe-container::after{content:''; width:100%; height:100%; background:url('img/bg_bottom.png') no-repeat bottom center / 100% auto; position:absolute; left:0; bottom:0; z-index:-1;}
+.findRecipe-container img {max-width: 100%;vertical-align:top;}
+.findRecipe-container .btn-wr{text-align: center; display: flex; flex-wrap:wrap; justify-content: center;align-items: center;}
+.findRecipe-container .btn-wr a{display:inline-block; background: #000; color: #fff; width:40%; max-width:200px; height:50px; line-height: 50px; font-size: 18px; margin:5px;}
+.findRecipe-container .btn-wr a img{margin-right: 10px; vertical-align:middle;     transform: translateY(-3px);} 
+.findRecipe-container > .section-tit{color:#fff; margin-bottom:80px;} 
+.findRecipe-container .box-tit{width:90%; max-width:600px; margin:0 auto;}
+.findRecipe-container .box-tit p{font-size: 22px; font-weight: 500; margin-top:30px; }
+.findRecipe-container .tit-h2{font-size: 45px; font-weight: 600;}
+.findRecipe-container .tit-h3{font-size: 30px; font-weight: 600;} 
+.findRecipe-container .tit-h4{font-size: 20px; font-weight: 600; color: #ea6f46;  margin-bottom: 10px;}  
+.findRecipe-container .box-inner{padding:80px 0; background: #fff; border-radius:20px; width:90%; max-width:960px; margin:0 auto; position:relative;}  
+
+
+/* step */
+.findRecipe-container .step-cont{ max-width:1120px;  padding:40px 0 80px;} 
+.findRecipe-container .step-cont .step-progress{max-width:300px; margin:0 auto 60px;}
+.findRecipe-container .step-cont .step-progress ul{position:relative; display:flex; align-items:flex-start; justify-content:space-between;}
+.findRecipe-container .step-cont .step-progress ul::after{content:'';  width:calc(100% - 20px); height:2px; background: #ddd; left:10px; top:3px; position:absolute;}
+.findRecipe-container .step-cont .step-progress ul li{position:relative; z-index:2;list-style:none;font-size: 14px; color: #666;}
+.findRecipe-container .step-cont .step-progress ul li::before{content:''; width:9px; height:9px; background: #ddd; border-radius:50%; display:block; margin:0 auto 10px; } 
+.findRecipe-container .step-cont .step-progress ul li.active{color: #ea6f46;}
+.findRecipe-container .step-cont .step-progress ul li.active::before{background: #ea6f46;}
+.findRecipe-container .step-cont .step-wr{max-width:740px; width:90%; margin:40px auto; height:435px;}
+.findRecipe-container .step-cont .step-wr .card {display:block; cursor:pointer; width:100%; border-radius:20px; overflow:hidden; position:relative;}
+.findRecipe-container .step-cont .step-wr .card:before{content:''; width:100%; height:50%; position:absolute; left:0; top:0;     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);}
+.findRecipe-container .step-cont .step-wr .card p{position:absolute; top:0; font-size: 24px; width:100%; color: #fff; padding-top: 40px; font-weight: 600;}
+.findRecipe-container .step-cont .step-wr .left{  width: 47%;   height: 100%;  position: relative;  z-index: 1;}
+.findRecipe-container .step-cont .step-wr .right{  width: 47%;height: 100%; position: relative; left: 53%;top: -100%;z-index: 2;}  
+
+
+/* choice */
+.findRecipe-container .choice-cont .recipe-choice {width:90%; position:relative; max-width:740px; margin:40px auto 0; height:435px; border-radius:20px; overflow:hidden;}
+.findRecipe-container .choice-cont .recipe-choice .card{  width: 50%;   height: 100%;  position: absolute;  z-index: 1; transition:all ease .6s;}
+.findRecipe-container .choice-cont .recipe-choice .card a{display:block; width:100%; height:100%;}
+.findRecipe-container .choice-cont .recipe-choice .card a:before{content:''; width:100%; height:100%;  background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), transparent); position:absolute; left:0; top:0; transition:all ease .3s; opacity:0.7;}
+.findRecipe-container .choice-cont .recipe-choice .card p{position:absolute; left:0; top:50%; transform:translateY(-50%); width:100%; font-size: 24px;font-weight: 600; text-align: center; transition:all ease .3s;}
+.findRecipe-container .choice-cont .recipe-choice .card p span{display:block; }
+.findRecipe-container .choice-cont .recipe-choice .card p span:after{content:''; width:12px; height:19px; background:url('img/arr_right.png') no-repeat center center / contain; display:inline-block; margin-left: 10px;}
+.findRecipe-container .choice-cont .recipe-choice .card + .card{ left:50%} 
+.findRecipe-container .choice-cont .recipe-choice .card a > img{width:100%; height:100%; object-fit:cover;}
+.findRecipe-container .choice-cont .recipe-choice .card a:hover:before{ opacity:.4;}   
+
+/* result */
+.findRecipe2024-wrap .findRecipe-container.result-cont{position:relative; width:100%; overflow:hidden;background-color: #ddc5ac;}
+.findRecipe2024-wrap .findRecipe-container.result-cont::before {mix-blend-mode: overlay;content: "";position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);display: block;width: 1000px;aspect-ratio: 1 / 1;border-radius: 9999px;background-color: rgba(255, 255, 255, 0.5);filter: blur(200px);}
+
+.findRecipe-container.result-cont .next-btn{position:absolute; top:50%; margin-top:-22.5px;right:-160px;}
+.findRecipe-container.result-cont .next-btn a{display:flex; align-items:center; gap:10px;}
+.findRecipe-container.result-cont .result-img{ width:90%; max-width:818px;  margin:40px auto;border-radius:20px; overflow:hidden;}
+.findRecipe-container.result-cont .result-recipe{width:90%; max-width:540px; margin:0 auto;}
+.findRecipe-container.result-cont .result-recipe p{ font-size: 18px;}
+.findRecipe-container.result-cont .result-recipe .ingredients {padding-top: 20px;padding-bottom: 40px; margin-bottom: 40px; border-bottom:1px solid #ddd}
+.findRecipe-container.result-cont .result-recipe .ingredients .tit-h4{color: #000;}
+.findRecipe-container.result-cont .result-recipe .ingredients .tit-h3{color: #ea6f46;}
+.findRecipe-container.result-cont .result-recipe .ingredients p{   max-width:400px; margin:0 auto; margin-top: 10px;}
+.findRecipe-container.result-cont .result-recipe .how-to-make{margin-bottom: 40px;} 
+.findRecipe-container.result-cont .result-recipe .how-to-make .tit-h4{color: #000;}
+.findRecipe-container.result-cont .result-recipe .how-to-make ul li{margin:20px 0;font-size: 18px; text-align:left; padding-left:18px; text-indent:-18px;}
+.findRecipe-container.result-cont .result-recipe .how-to-make ul li strong{color: #ea6f46; font-size: 1.2em;}
+.findRecipe-container.result-cont .result-recipe .how-to-make ul li span{display:block; color:#999; font-size: 16px;     padding-left: 8px;  text-indent: -8px; margin-top: 7px; font-weight: 300;}
+.findRecipe-container.result-cont > .btn-wr{margin-top: 40px;}
+.findRecipe-container.result-cont > .btn-wr a{max-width:240px; height:60px; line-height:60px;}
+.findRecipe-container.result-cont > .btn-wr a img{margin-right: 0; margin-left: 10px;}
+
+/* 구매하기 연동 */
+.findRecipe-container.result-cont #recipe-addtobag{display:inline-block; border:1px solid #ddd; padding:6px; margin:5px;}
+.findRecipe-container.result-cont fieldset.svelte-1nhbbpw.svelte-1nhbbpw {display: flex;flex-wrap: wrap;align-items: center;border-radius: 5px;gap: 5px;}
+.findRecipe-container.result-cont .minus.svelte-1nhbbpw.svelte-1nhbbpw, 
+.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw {flex: 0 0 auto;width: 30px;aspect-ratio: 1 / 1;font-size: 0;border-radius: inherit;}
+.findRecipe-container.result-cont button.svelte-1nhbbpw.svelte-1nhbbpw, 
+.findRecipe-container.result-cont input.svelte-1nhbbpw.svelte-1nhbbpw {margin: 0;padding: 0;color: inherit;font: inherit;border: none;background-color: transparent;cursor: pointer;display: block;  position: relative;}
+.findRecipe-container.result-cont .minus.svelte-1nhbbpw.svelte-1nhbbpw::before, 
+.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw::before {content: "";display: block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 50%;height: 2px;background-color: #000;}
+.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw::after {content: "";display: block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 50%;height: 2px;background-color: #000;transform: translate(-50%, -50%) rotate(90deg);}
+.findRecipe-container.result-cont .quantity.svelte-1nhbbpw.svelte-1nhbbpw {display: block;align-self: stretch;min-width: -webkit-min-content;min-width: min-content;width: 1em;}
+.findRecipe-container.result-cont .quantity.svelte-1nhbbpw input[type=number].svelte-1nhbbpw {-moz-appearance: textfield;}
+.findRecipe-container.result-cont .quantity.svelte-1nhbbpw input.svelte-1nhbbpw {width: 100%;height: 100%;font-size: 18px;color: black;background: white;display: inline-block;text-align: center;}
+.findRecipe-container.result-cont button.svelte-1nhbbpw.svelte-1nhbbpw, 
+.findRecipe-container.result-cont input.svelte-1nhbbpw.svelte-1nhbbpw {margin: 0;padding: 0;color: inherit;font: inherit;border: none;background-color: transparent;cursor: pointer;display: block;position: relative;} 
+.findRecipe-container.result-cont .buy.svelte-1nhbbpw.svelte-1nhbbpw {flex: 0 1 auto;color: white;margin: 0;font-size: 18px;font-weight: 500;text-transform: uppercase;padding: 6px;border-radius: inherit;background-color: #ea6f46;min-width: 40px;} 
+.findRecipe-container.result-cont .buy.svelte-1nhbbpw.svelte-1nhbbpw img{margin-top: 2px;}
+ 
+
+/********************************************************** responsive **********************************************************/ 
+@media screen and (min-width: 991px){ 
+	/* font resizing */
+	html {
+		font-size: 16px;
+		scroll-behavior: smooth;
+	}   
+}
+
+
+@media screen and (max-width:990px) {   
+	/* main */  
+
+
+} 
+/* header,footer */  
+@media screen and (max-width: 995px) {
+	.LoginDropdownButton__icon {
+		font-size:4.4em;
+		top:14px;
+		left:14px;
+	}
+
+	.ResponsiveContainer {
+		font-size: 16px
+	}
+
+	.HeaderNavigationBarItem__element {
+		font-size: .8125em
+	}
+
+	.LanguageSwitcher__link {
+		padding: 1em 15px
+	}
+
+	.LanguageSwitcher__button-icon {
+		font-size: .75em
+	}
+
+	.MiniBasketButton,.MiniBasketButtonGuest {
+		font-size: .875em;
+	}
+
+	.MiniBasketButton__quantity {
+		font-size: 2rem
+	}
+
+	.item-cart .util .AddToBagButtonSmall__quantity .AddToBagButtonSmall__icon-sign {
+		font-size: 2.7rem
+	}
+
+	.t-sm-400-caps,.t-sm-400-sl-caps {
+		font-size: 1em;
+		letter-spacing: -0.0625rem
+	}
+
+	footer {
+		font-size: 16px
+	}
+
+	nb-footer-logos section.pb4 {
+		padding-bottom: .75em;
+		font-size: 16px
+	}
+
+	nb-footer-logos li {
+		margin: .25em 1em .25em 0
+	}
+
+	nb-footer-logos li>* {
+		padding: .25em
+	}
+
+	nb-container .cb-inner {
+		margin: 0 1em;
+		font-size: 16px
+	}
+
+	nb-footer-logos img,nb-footer-logos svg {
+		height: 1.5em
+	}
+
+	.nb-informative-stripe__inner {
+		font-size: .75em;
+		letter-spacing: .0625em;
+		padding: .5em
+	}
+
+	.nb-informative-stripe__inner nb-link>:first-of-type {
+		font-size: .75em;
+		letter-spacing: .0625em
+	}
+
+	nb-link>* {
+		margin: -0.375em -0.375em -0.5em;
+		padding: .375em .375em .5em
+	}
+
+	nb-footer-links button::after {
+		border-width: .375em .3125em 0;
+		right: 1em
+	}
+
+	nb-footer-links button,nb-footer-links h3 {
+		padding: 1em 0
+	}
+
+	.t-xs-500,.t-xs-500-sl {
+		font-size: .875em
+	}
+
+	nb-footer-bottom .big-links {
+		margin-bottom: .5em;
+		font-size: 16px
+	}
+
+	nb-footer-bottom .cb-row:last-child {
+		padding: 2em 0 1.5em;
+		font-size: 16px
+	}
+
+	nb-footer-bottom a {
+		line-height: 1em;
+		margin-left: -0.625em;
+		padding-top: .5em;
+		padding-right: .625em;
+		padding-bottom: .5em;
+		padding-left: .625em
+	}
+
+	nb-footer-bottom .socials p {
+		font-size: .875em
+	}
+
+	nb-footer-bottom .socials a {
+		padding-left: .25em;
+		padding-right: .25em
+	}
+
+	nb-footer-bottom .pagetop a {
+		line-height: 1.5em;
+		padding-right: 2em
+	}
+
+	nb-footer-bottom .pagetop nb-icon {
+		right: -1.5em
+	}
+
+	nb-footer-bottom .pagetop nb-icon svg {
+		height: 1em;
+		width: 5.625em
+	}
+
+	nb-footer-bottom .copyright {
+		-moz-column-gap: .75em;
+		column-gap: .75em
+	}
+
+	nb-footer-bottom .copyright a {
+		margin-right: -0.375em;
+		padding-left: .375em;
+		padding-right: .375em
+	}
+
+	nb-footer-bottom .copyright p {
+		font-size: .875em
+	}
+
+	nb-footer-bottom .copyright nb-icon svg {
+		height: 1.5em;
+		width: 5.625em
+	}
+
+	.KR_footer {
+		font-size: 16px
+	}
+
+	.KR_footer li {
+		font-size: .75em;
+		line-height: 1.5
+	}
+
+	.t-2xs-500,.t-2xs-500-sl {
+		font-size: .75em;
+		letter-spacing: .0625em
+	}
+
+	.t-sm-400,.t-sm-400-sl {
+		font-size: 1em
+	}
+
+	nb-dropdown .nb-dropdown__menu>div button {
+		padding: .75em 1em .75em 2.5em
+	}
+
+	nb-dropdown .nb-dropdown__button span:last-child {
+		font-size: 1.2em;
+		line-height: 1em
+	}
+
+	nb-footer-bottom nb-dropdown .nb-dropdown__button span:last-child {
+		letter-spacing: .1em;
+		padding-right: 1em
+	}
+
+	.QuantitySelector {
+		font-size: 16px
+	}
+
+	.QuantitySelector__popin {
+		padding: .625em;
+		width: 17.25em;
+		font-size: .75em
+	}
+
+	.QuantitySelectorCustomField__container {
+		font-size: 16px
+	}
+
+	.PredefinedQuantityList__quantity {
+		width: 3em;
+		height: 3em;
+		letter-spacing: .1em
+	}
+
+	.TextField__label--compact {
+		top: 11px;
+		font-size: .7em
+	}
+
+	.QuantitySelectorCustomField__button-ok {
+		padding: 0 .8em;
+		line-height: 1.625em;
+		font-size: .8em
+	}
+
+	.MiniBasketDropdown__dropdown {
+		font-size: 16px
+	}
+
+	.MiniBasketDropdown__header__title {
+		font-size: 1.25em
+	}
+
+	.BenefitMessage {
+		font-size: 1em
+	}
+
+	.MiniBasketItemCategory {
+		font-size: 1em
+	}
+
+	.MiniBasketItem {
+		font-size: 1em
+	}
+
+	.MiniBasketItem__title {
+		padding: 30px 0;
+		font-size: .75em
+	}
+
+	.AddToBagButtonSmall {
+		font-size: 2.5rem
+	}
+
+	.MiniBasketFooter {
+		font-size: 16px
+	}
+
+	.MiniBasketTotalTable__creditSubTotal,.MiniBasketTotalTable__creditSubTotal-value,.MiniBasketTotalTable__creditTotalPrice,.MiniBasketTotalTable__creditTotalPrice-value,.MiniBasketTotalTable__totalPrice,.MiniBasketTotalTable__totalPrice-value {
+		font-size: 1em
+	}
+
+	.MiniBasketDropdown__content__title {
+		font-size: 1em
+	}
+
+	.QuantitySelectorCustomField__input {
+		height: 7.9em
+	}
+
+	.MiniBasketItemPriceAndName__price {
+		padding: 18px 0 0
+	}
+
+	.MiniBasketTotalTable__cartDisclamerMessage-label {
+		font-size: .75em
+	}
+
+	.MiniBasketFooter__button-checkout {
+		font-size: .875em
+	}
+
+	.MiniBasketDropdown__Link-reorder,.MiniBasketDropdown__Link-shopping {
+		font-size: .875em
+	}
+
+	nb-app-banner nb-cta {
+		margin-left: -1em
+	}
+
+	nb-app-banner a nb-icon {
+		right: .75em
+	}
+
+	nb-cta .button--navigation {
+		width: 3em;
+		height: 3em
+	}
+
+	nb-app-banner nb-icon[icon="24/symbol/nespresso-monogram"] svg {
+		width: 2.5em;
+		height: 2.5em;
+		margin-right: 1em
+	}
+
+	.t-xs-700,.t-xs-700-sl {
+		font-size: .875em;
+		letter-spacing: .0625em
+	}
+
+	nb-app-banner a {
+		bottom: -0.5em;
+		left: 1em;
+		right: -1em;
+		top: -0.5em
+	}
+
+	nb-app-banner .pt3 {
+		padding-top: 3.2em
+	}
+
+	nb-app-banner .pb3 {
+		padding-bottom: 3.2em
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.HeaderNavigationBarDropdown__item .HeaderNavigationBarDropdown__item-heading {
+		font-size:.875em
+	}
+
+	.HeaderNavigationBarDropdown__item .HeaderNavigationBarDropdown__medium-links-item {
+		font-size: .875em
+	}
+
+	.LoginDropdown__register-description {
+		white-space: nowrap;
+		font-size: .75em
+	}
+
+	.LoginDropdown__title {
+		font-size: .875em;
+		line-height: 1.3
+	}
+
+	.LoginForm__forgotten-password {
+		font-size: .875em
+	}
+
+	.LoginForm__submit.DefaultButton--regular {
+		font-size: .875em
+	}
+
+	.DefaultButton.LoginDropdown__register-link.DefaultButton--regular {
+		font-size: .875em
+	}
+
+	.AddToBagButtonSmall__icon-sign {
+		font-size: 1.5em
+	}
+
+	.TextField__label {
+		overflow: visible
+	}
+
+	.AccountMenu {
+		font-size: .8em;
+		line-height: 1.5
+	}
+
+	.LoggedInPanel__logout-button {
+		font-size: .875em;
+		line-height: 1.3
+	}
+
+	.g_cart_component_wrapper {
+		font-size: 1em
+	}
+
+	.g_cart_component p {
+		font-size: .75em;
+		line-height: 2
+	}
+
+	.ta-header-username {
+		font-size: .625em;
+		line-height: 1.5
+	}
+
+	.ta-header-username {
+		font-size: 1em
+	}
+
+	.LoginForm__remember-me-label {
+		font-size: 1em;
+		line-height: 1
+	}
+
+	.LoginDropdown__reorder-title {
+		font-size: .875em;
+		line-height: 1.5
+	}
+
+	.LoginDropdown__reorder a {
+		font-size: .875em
+	}
+
+	.InputCheckbox__label--without-legend {
+		font-size: 1em;
+		line-height: 1
+	}
+
+	.TextField--active .TextField__input--compact {
+		font-size: 1em;
+		line-height: 1
+	}
+
+	.ta-header-password {
+		font-size: 1em;
+		line-height: 1
+	}
+
+	.InputCheckbox__label-value {
+		font-size: .825em
+	}
+
+	.TextField__label-value {
+		line-height: 2.3;
+		font-size: 1.5rem
+	}
+
+	.MiniBasketButton__quantity {
+		font-size: 1em
+	}
+
+	.MiniBasketCartNotification {
+		font-size: 1em
+	}
+
+	.MiniBasketCartNotification .MiniBasketCartNotification__message {
+		font-size: .875em
+	}
+
+	.QuantitySelectorCustomField__input {
+		height: 40px
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.Header__customer {
+		height:100%;
+		font-size: 16px
+	}
+
+	.pt4 {
+		padding-top: 1em
+	}
+
+	.pb7 {
+		padding-bottom: 2em
+	}
+
+	.pt7 {
+		padding-top: 2em
+	}
+}
