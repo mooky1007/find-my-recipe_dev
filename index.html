@@ -900,6 +900,7 @@
 				this.status = 0;
 				this.stepResult = '';
 				this.type = 'vl';
+				this.animation = false;
 				this.el = {
 					container: document.querySelector('[data-findRecipe-container]'),
 
@@ -966,10 +967,18 @@
 				shareButton.addEventListener('click', this.share.bind(this));
 
 				plusButton.addEventListener('click', () => {
+					if(!this.stock){
+					alert('품절된 상품입니다.');
+					return;
+				}
 					skuCount.value = parseInt(skuCount.value) + 10;
 				});
 
 				minusButton.addEventListener('click', () => {
+					if(!this.stock){
+					alert('품절된 상품입니다.');
+					return;
+				}
 					if (parseInt(skuCount.value) > 1) {
 						skuCount.value = parseInt(skuCount.value) - 10;
 					}
@@ -1007,6 +1016,7 @@
 				this.render.resultTitle();
 				this.render.otherType();
 				this.render.result();
+				this.render.page();
 
 				const queryString = `result=${this.stepResult}&type=${this.type}`;
 				const url = `${window.location.origin}${window.location.pathname}?${queryString}`;
@@ -1014,7 +1024,11 @@
 			}
 
 			addCart() {
-				if(this.el.skuCount.value === '0'){
+				if(!this.stock){
+					alert('품절된 상품입니다.');
+					return;
+				}
+				if (this.el.skuCount.value === '0') {
 					return;
 				}
 
@@ -1022,14 +1036,14 @@
 					window.CartManager.updateItem(this.choiceData[this.stepResult][this.type].sku, this.el.skuCount.value).then(() => {
 						alert('장바구니에 추가되었습니다.');
 					});
-				}else{
+				} else {
 					alert(`
-		프로덕트 환경이 아니거나 window.CartManager가 선언되지 않았습니다.
+프로덕트 환경이 아니거나 window.CartManager가 선언되지 않았습니다.
 
-		장바구니에 추가될 제품은 다음과 같습니다.
-		제품명: ${this.choiceData[this.stepResult][this.type].ingredientsTitle}
-		SKU: ${this.choiceData[this.stepResult][this.type].sku}
-		수량: ${this.el.skuCount.value}
+장바구니에 추가될 제품은 다음과 같습니다.
+제품명: ${this.choiceData[this.stepResult][this.type].ingredientsTitle}
+SKU: ${this.choiceData[this.stepResult][this.type].sku}
+수량: ${this.el.skuCount.value}
 					`);
 				}
 			}
@@ -1062,6 +1076,8 @@
 			}
 
 			async nextStep(direction) {
+				if(this.animation) return;
+				this.animation = true;
 				await new Promise((resolve) => {
 					const targetCard = this.el.stepCards.querySelector(`.${direction}`);
 					const otherCard = this.el.stepCards.querySelector(`.${direction === 'left' ? 'right' : 'left'}`);
@@ -1098,7 +1114,8 @@
 					this.el.stepCards.style.transition = 'all 0.3s';
 					this.el.stepCards.style.transform = 'translateY(0)';
 					this.el.stepCards.style.transform = 'none';
-					
+
+					this.animation = false;
 					return;
 				}
 				this.step++;
@@ -1110,6 +1127,7 @@
 						resolve();
 					}, 100);
 				});
+				this.animation = false;
 
 
 				await new Promise((resolve) => {
@@ -1140,11 +1158,11 @@
 
 					targetCard.style.transition = 'width 0.5s';
 					otherCard.style.transition = 'width 0.5s';
-					
+
 					targetCard.style.zIndex = 2;
 					otherCard.style.zIndex = 1;
 
-					if(type === 'vl'){
+					if (type === 'vl') {
 						targetCard.style.left = 'auto';
 						targetCard.style.right = '0';
 					}
@@ -1167,8 +1185,36 @@
 				const queryString = `result=${this.stepResult}&type=${this.type}`;
 				const url = `${window.location.origin}${window.location.pathname}?${queryString}`;
 				history.pushState({ path: url }, '', url);
-
+				
 				window.scrollTo(0, 0);
+			}
+
+			async checkStock(sku) {
+				return new Promise(resolve => {
+					let productFullId = 'erp.kr.b2c/prod/' + sku;
+					let result;
+					if(window.napi){
+						result = window.napi.catalog().getStocks().then((dataStocks) => {
+							resolve();
+							return dataStocks[productFullId]
+						})
+					}else{
+						console.log('napi가 선언되지 않았습니다.');
+						result = false;
+						resolve();
+					}
+	
+					if(!result){
+						this.stock = result;
+						this.el.addCartButton.style.filter = 'grayscale(100)';
+						this.el.addCartButton.style.cursor = 'not-allowed';
+					}else{
+						this.stock = result;
+						this.el.addCartButton.style.filter = 'none';
+						this.el.addCartButton.style.cursor = 'pointer';
+					}
+				});
+
 			}
 
 			renderAll() {
@@ -1251,11 +1297,13 @@
 				right.appendChild(a2);
 
 				a.addEventListener('click', () => {
+					if(this.animation) return;
 					this.stepResult += cards[0].id;
 					this.nextStep('left');
 				});
 
 				a2.addEventListener('click', () => {
+					if(this.animation) return;
 					this.stepResult += cards[1].id;
 					this.nextStep('right');
 				});
@@ -1268,12 +1316,12 @@
 					this.el.choiceCont.style.transition = 'all 0.3s';
 					this.el.choiceCont.style.transform = 'translateY(30px)';
 					this.el.choiceCont.style.opacity = 0;
-					
+
 					setTimeout(() => {
 						resolve();
 					}, 100);
 				});
-				
+
 				await new Promise((resolve) => {
 
 					this.el.choiceCont.style.transform = 'translateY(0)';
@@ -1289,7 +1337,7 @@
 				const div = document.createElement('div');
 				div.classList.add('card', 'ol');
 				const a = document.createElement('a');
-				a.setAttribute('href','#none');
+				a.setAttribute('href', '#none');
 				const p = document.createElement('p');
 				const img = document.createElement('img');
 				img.src = 'img/type_ol.png';
@@ -1305,7 +1353,7 @@
 				const div2 = document.createElement('div');
 				div2.classList.add('card', 'vl');
 				const a2 = document.createElement('a');
-				a2.setAttribute('href','#none');
+				a2.setAttribute('href', '#none');
 				const p2 = document.createElement('p');
 				const img3 = document.createElement('img');
 				img3.src = 'img/type_vl.png';
@@ -1346,30 +1394,33 @@
 				});
 			}
 
-			renderPage() {
+			async renderPage() {
 				const { container, stepCont, choiceCont, resultCont } = this.el;
 
 				stepCont.style.display = 'none';
 				choiceCont.style.display = 'none';
 				resultCont.style.display = 'none';
 
+				if (this.status === 2) {
+					await this.checkStock(this.choiceData[this.stepResult][this.type].sku);
+					container.style.display = 'none';
+				} else {
+					container.style.display = 'block';
+				}
+
 				const statusPages = [stepCont, choiceCont, resultCont];
 
 				statusPages[this.status].style.display = 'block';
 
-				if(this.status === 2){
-					container.style.display = 'none';
-				}else{
-					container.style.display = 'block';
-				}
+				
 			}
 
 			renderOtherTypeButton() {
 				const { otherType } = this.el;
-				
-				if(this.type === 'vl'){
+
+				if (this.type === 'vl') {
 					otherType.innerHTML = '<a href="#none"><img src="img/type_ol.png" alt=""><img src="img/btn_next.png" alt=""></a>';
-				}else{
+				} else {
 					otherType.innerHTML = '<a href="#none"><img src="img/type_vl.png" alt=""><img src="img/btn_next.png" alt=""></a>';
 				}
 			}
