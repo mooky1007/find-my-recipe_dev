@@ -198,7 +198,7 @@
 		.findRecipe-container.result-cont .result-recipe p{ font-size: 18px;}
 		.findRecipe-container.result-cont .result-recipe .ingredients {padding-top: 20px;padding-bottom: 40px; margin-bottom: 40px; border-bottom:1px solid #ddd}
 		.findRecipe-container.result-cont .result-recipe .ingredients .tit-h4{color: #000;}
-		.findRecipe-container.result-cont .result-recipe .ingredients .tit-h3{color: #ea6f46;}
+		.findRecipe-container.result-cont .result-recipe .tit-h3{color: #ea6f46;}
 		.findRecipe-container.result-cont .result-recipe .ingredients p{   max-width:400px; margin:0 auto; margin-top: 10px;}
 		.findRecipe-container.result-cont .result-recipe .how-to-make{margin-bottom: 40px;} 
 		.findRecipe-container.result-cont .result-recipe .how-to-make .tit-h4{color: #000;}
@@ -240,10 +240,10 @@
 
 		@media screen and (max-width:990px) {   
 			/* main */  
-			.findRecipe-container{padding:60px 0;}
+			.findRecipe-container{padding:50px 0;}
 			.findRecipe-container .box-inner{width:96%; padding:40px 0;}
-			.findRecipe-container.result-cont .box-inner{padding-top:80px;}
-			.findRecipe-container > .section-tit{margin-bottom: 40px;} 
+			.findRecipe-container.result-cont .box-inner{padding-top:60px;}
+			.findRecipe-container > .section-tit{margin-bottom: 20px;} 
 			.findRecipe-container .tit-h3{font-size: 20px;}
 			.findRecipe-container .tit-h2{font-size: 28px;}
 			.findRecipe-container .tit-h4{font-size: 16px; margin-bottom: 5px;}
@@ -814,13 +814,12 @@
 									</div>
 									<div class="result-recipe">
 										<div class="ingredients">
-											<div class="tit-h4">INGREDIENTS</div>
-											<div class="tit-h3" data-result-ingredients-title>더블 에스프레소 키아로</div>
+											<div class="tit-h3">INGREDIENTS</div> 
 											<p data-result-ingredients-desc>쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음
-												리빌 에스프레소 마일드, 쉐이커</p>
+												리빌 에스프레소 마일드</p>
 										</div>
 										<div class="how-to-make">
-											<div class="tit-h4">HOW TO MAKE</div>
+											<div class="tit-h3">HOW TO MAKE</div>
 											<ul data-result-how-to-make>
 												<li>
 													<strong>1.</strong>
@@ -835,8 +834,7 @@
 												</li>
 												<li>
 													<strong>1.</strong>
-													쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에
-													브라운 슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+													쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장 자리에 슈거림을 만들어 준 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
 													<span>* * 샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프
 														필터 부분으로 커피를 부어주세요.</span>
 												</li>
@@ -1243,8 +1241,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const { choiceData, el } = this;
 				const { choiceTitle, choiceSubTitle } = el;
 
-				choiceTitle.innerHTML = choiceData[this.stepResult].vl.title;
-				choiceSubTitle.innerHTML = choiceData[this.stepResult].vl.subTitle;
+				choiceTitle.innerHTML = choiceData[this.stepResult].ingredientsTitle || '';
+				//choiceSubTitle.innerHTML = choiceData[this.stepResult].vl.subTitle;
+				choiceSubTitle.innerHTML = '';
 			}
 
 			renderResultTitle() {
@@ -1357,7 +1356,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				a2.setAttribute('href', '#none');
 				const p2 = document.createElement('p');
 				const img3 = document.createElement('img');
-				img3.src = 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/.png';
+				img3.src = 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/type_vl.png';
 				p2.appendChild(img3);
 				p2.innerHTML += '<span>버츄오 레시피 보기</span>';
 				a2.appendChild(p2);
@@ -1384,7 +1383,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 
 				resultImage.src = choiceData[this.stepResult][this.type].resultImgSrc;
 
-				resultIngredientsTitle.innerHTML = choiceData[this.stepResult][this.type].ingredientsTitle + ' 캡슐 1개';
+				//resultIngredientsTitle.innerHTML = choiceData[this.stepResult][this.type].ingredientsTitle + ' 캡슐 1개';
 				resultIngredientsDesc.innerHTML = choiceData[this.stepResult][this.type].ingredientsDesc;
 
 				resultHowToMake.innerHTML = '';
@@ -1494,19 +1493,19 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 			],
 			result: {
 				ibf: {
+					ingredientsTitle: '산뜻하게 즐기는 아이스 블랙 커피 레시피',
 					ol: {
 						sku: '7748.40',
 						title: '아이스 자몽프레소 ',
 						subTitle: 'ICED GRAPEFRUIT ESPRESSO',
 						desc: '나른한 오후에 만끽하는 청량함',
-						ingredientsTitle: '리스트레토/리스트레토 디카페나토',
 						ingredientsDesc: '리스트레토/리스트레토 디카페나토 캡슐 1개, 쉬크르 루 1스틱, 자몽 시럽 10ml, 얼음 6조각 (조각 당 30g)',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/grapefruit_ol.jpg',
 						howToMake: [
 							`
                             <li>
                                 <strong>1.</strong>
-                                뷰 카푸지노 컵에 자몽 시럽 (10ml)를 깔아 줍니다.
+                                뷰 카푸치노 컵에 자몽 시럽 (10ml)를 깔아 줍니다.
                             </li>
                         `,
 							`
@@ -1531,7 +1530,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						sku: '7223.60',
 						title: '루비 코스모폴리탄',
 						subTitle: 'RUBY COSMOPOLITAN',
-						desc: '매혹적인 석류와 상쾌한 아이스 커피의 랑데부 (TBD)',
+						desc: '매혹적인 석류와 상쾌한 아이스 커피의 랑데부',
 						ingredientsTitle: '아이스 레제로',
 						ingredientsDesc: '아이스 레제로 캡슐 1개 (80ml), 얼음 150g, 케인슈가 시럽 10ml, 석류주스 80ml',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/cosmopolitan_vl.jpg',
@@ -1565,6 +1564,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				ibn: {
+					ingredientsTitle: '고소하게 즐기는 아이스 블랙 커피 레시피',
 					ol: {
 						sku: '7586.40',
 						title: '마자그랑',
@@ -1601,7 +1601,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						subTitle: 'CHIARO SHAKERATO',
 						desc: '부드럽고 시원하게 즐기는 강렬한 한잔',
 						ingredientsTitle: '더블 에스프레소 키아로',
-						ingredientsDesc: '쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음 리빌 에스프레소 마일드, 쉐이커',
+						ingredientsDesc: '더블 에스프레소 키아로 캡슐 1개, 쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/chiaro_vl.jpg',
 						howToMake: [
 							`
@@ -1624,8 +1624,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 							`
                             <li>
                                 <strong>3.</strong>
-                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장자리에 브라운 
-                                슈거를 묻힌 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+                                쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장 자리에 슈거림을 만들어 준 뒤  <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
                                 <span>
                                     * 샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프 필터 
                                     부분으로 커피를 부어주세요.
@@ -1637,35 +1636,39 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				imf: {
+					ingredientsTitle: '산뜻하게 즐기는 아이스 밀크 커피 레시피',
 					ol: {
 						sku: '7750.40',
-						title: '카페 살렌티노',
-						subTitle: 'CAFE SALENTINO',
-						desc: '색다르게 즐기는 아이스 레시피',
-						ingredientsTitle: '이스탄불',
-						ingredientsDesc: '이스탄불 캡슐 1개, 얼음 6조각 (조각 당 30g), 아몬드 밀크 80ml',
-						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
+						title: '코코넛 돌체 라테',
+						subTitle: 'COCONUT DOLCE LATTE',
+						desc: '더위를 식히는 이국적인 아이스 커피',
+						ingredientsTitle: '아이스 코코넛향 커피',
+						ingredientsDesc: '오리지널 아이스 코코넛향 캡슐 1개(40ml), 얼음 4조각 (조각 당 30g), 우유 70 ml, 연유 10 ml',
+						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/coconutdolce_ol.jpg',
 						howToMake: [
 							`
                             <li>
                                 <strong>1.</strong>
-                                뷰 레시피 글래스에 2/3을 얼음으로 채워줍니다.
+                                얼음 4조각을 레시피 글라스 스몰에 넣고 우유 70 ml, 연유 10 ml를 부은 뒤 잘 섞어줍니다.
+                                <span>
+                                    * 우유를 귀리 음료로 대체하여 더욱 고소한 레시피로 즐기실 수 있습니다.
+                                </span>
                             </li>
                         `,
 							`
                             <li>
                                 <strong>2.</strong>
-                                아몬드 밀크 (80ml)를 부어줍니다.
+                                그 위에 에스프레소로 추출합니다.
                             </li>
                         `,
 							`
                             <li>
                                 <strong>3.</strong>
-                                그 위에 에스프레소 (40ml)로 추출하여 완성합니다.
+                                코코넛 칩으로 장식하여 완성합니다. 
                             </li>
                         `,
 						],
-						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
+						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/coconutdolce_ol.jpg',
 					},
 					vl: {
 						sku: '7185.60',
@@ -1697,12 +1700,13 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 							`
                             <li>
                                 <strong>4.</strong>
-                                코코넛 캡슐을 버츄오 팝/ 넥스트의 '아이스 & 라테' 모드로 추출 후 (80ml) 반만 넣어주세요 (40ml). 버츄오 플러스는 커피를 40ml로 끊어 추출해주세요. 
+                                코코넛 캡슐을 버츄오 팝/ 넥스트의 '아이스 & 라테' 모드로 추출 후 (80ml) 반만 넣어주세요 (40ml). 커피를 40ml로 끊어 추출해주세요. 
+								<span>* 버츄오 플러스에서는 230ml 그대로 추출 후 40ml 만 활용해 주세요!</span>
                             </li>
                         `,
 							`
                             <li>
-                                <strong>4.</strong>
+                                <strong>5.</strong>
                                 아까 파낸 샤베트를 올려 완성해주세요
                             </li>
                         `,
@@ -1711,44 +1715,42 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				imn: {
+					ingredientsTitle: '고소하게 즐기는 아이스 밀크 커피 레시피',
 					ol: {
 						sku: '7738.40',
-						title: '아이스 코코넛 돌체 라테',
-						subTitle: 'ICED COCONUT DOLCE LATTE',
-						desc: '더위를 식히는 이국적인 아이스 커피',
-						ingredientsTitle: '아이스 코코넛향 커피',
-						ingredientsDesc: '오리지널 아이스 코코넛향 캡슐 1개(40ml), 얼음 4조각 (조각 당 30g), 우유 70 ml, 연유 10 ml',
-						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/coconutdolce_ol.jpg',
+						title: '카페 살렌티노',
+						subTitle: 'CAFE SALENTINO',
+						desc: '색다르게 즐기는 아이스 레시피',
+						ingredientsTitle: '이스탄불',
+						ingredientsDesc: '이스탄불 캡슐 1개, 얼음 6조각 (조각 당 30g), 아몬드 밀크 80ml',
+						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
 						howToMake: [
 							`
                             <li>
                                 <strong>1.</strong>
-                                얼음 4조각을 레시피 글라스 스몰에 넣고 우유 70 ml, 연유 10 ml를 부은 뒤 잘 섞어줍니다.
+                                뷰 레시피 글래스에 2/3을 얼음으로 채워줍니다.
                             </li>
                         `,
 							`
                             <li>
                                 <strong>2.</strong>
-                                그 위에 에스프레소로 추출합니다.
+                                아몬드 밀크 (80ml)를 부어줍니다.
                             </li>
                         `,
 							`
                             <li>
                                 <strong>3.</strong>
-                                코코넛 칩으로 장식하여 완성합니다.
-                                <span>
-                                    * 우유를 귀리 음료로 대체하여 더욱 고소한 레시피로 즐기실 수 있습니다.
-                                </span>
+                                그 위에 에스프레소 (40ml)로 추출하여 완성합니다.
                             </li>
                         `,
 						],
-						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/coconutdolce_ol.jpg',
+						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
 					},
 					vl: {
 						sku: '7019.60',
 						title: '써니 아포가토',
 						subTitle: 'SUNNY AFFOGATO',
-						desc: '따듯한 햇살은 머금은 눈부신 한잔 (TBD)',
+						desc: '따뜻한 햇살을 머금은 눈부신 한잔',
 						ingredientsTitle: '아이스 써니 아몬드 바닐라향 커피',
 						ingredientsDesc: '아이스 써니 아몬드 바닐라향 캡슐 1개 (80ml), 우유 20ml, 생크림 20ml, 연유 10ml, 바닐라 익스트랙 1-2방울, 쉬크르 루 1개',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/sunny_vl.jpg',
@@ -1790,6 +1792,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				hbf: {
+					ingredientsTitle: '산뜻하게 즐기는 따뜻한 블랙 커피 레시피',
 					ol: {
 						sku: '7723.70',
 						title: '허니 블랙',
@@ -1818,7 +1821,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						sku: '7220.60',
 						title: '페퍼민트 아메리카노',
 						subTitle: 'PEPPERMINT AMERICANO',
-						desc: '아침을 상쾌하게 깨우는 따듯한 룽고 커피',
+						desc: '아침을 상쾌하게 깨우는 따뜻한 룽고 커피',
 						ingredientsTitle: '이니지오',
 						ingredientsDesc: '이니지오 캡슐 1개, 페퍼민트 티백, 페퍼민트 잎',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/peppermint_vl.jpg',
@@ -1834,7 +1837,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                                 <strong>2.</strong>
                                 그랑룽고(150ml)로 추출하고 페퍼민트 잎 등으로 가니쉬 하세요.
                                 <span>
-                                    * 카스테라와 페어링 하여 즐겨보세요. <br />
+                                    * 카스테라와 페어링 하여 즐겨보세요. 
+                                </span>
+                                <span>
 									* 취향에 따라 마실수록 상쾌해지는 아이스 아메리카노로 즐길 수 있어요. (얼음 가득 넣은 잔에 아이스&라테 모드로 추출)
                                 </span>
                             </li>
@@ -1844,12 +1849,13 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				hbn: {
+					ingredientsTitle: '고소하게 즐기는 따뜻한 블랙 커피 레시피',
 					ol: {
 						sku: '7757.40',
 						title: '버터 스카치 아메리카노',
 						subTitle: 'BUTTER SCOTCH AMERICANO',
 						desc: '달콤한 풍미가 돋보이는 스윗 아메리카노',
-						ingredientsTitle: '부에노스 아이리스 룽고',
+						ingredientsTitle: '부에노스 아이레스 룽고',
 						ingredientsDesc: '부에노스 아이레스 룽고 캡슐 1개, 버터 스카치 시럽 10ml',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/butterscotch_ol.jpg',
 						howToMake: [
@@ -1871,6 +1877,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					vl: {
 						sku: '7219.60',
 						title: '돌체리카노',
+						title_en: 'Dolce-ricano',
 						subTitle: 'DOLCERICANO',
 						desc: '부드럽고 달콤하게 입 안을 깨우는 블랙 커피',
 						ingredientsTitle: '더블 에스프레소 돌체',
@@ -1897,6 +1904,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				hmf: {
+					ingredientsTitle: '산뜻하게 즐기는 따뜻한 밀크 커피 레시피',
 					ol: {
 						sku: '7759.40',
 						title: '레몬 크림 라테',
@@ -1959,19 +1967,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					},
 				},
 				hmn: {
+					ingredientsTitle: '고소하게 즐기는 따뜻한 밀크 커피 레시피',
 					ol: {
 						sku: '7765.40',
 						title: '코코 리치 화이트',
 						subTitle: 'COCO RICH WHITE',
 						desc: '나를 위한 달콤하고 부드러운 선물',
 						ingredientsTitle: '아르페지오/아르페지오 디카페나토',
-						ingredientsDesc: '아르페지오/아르페지오 디카페나토 캡슐 1개, 밀크 초콜릿 큐브 1개, 바닐라 크림 10g, 우유 40ml',
+						ingredientsDesc: '아르페지오/아르페지오 디카페나토 캡슐 1개, 밀크 초콜릿 스퀘어 1개, 바닐라 크림 10g, 우유 40ml',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/cocorich_ol.jpg',
 						howToMake: [
 							`
                             <li>
                                 <strong>1.</strong>
-                                뷰 카푸치노 컵 바닥에 네스프레소 밀크 초콜릿 큐브 하나를 깔아 줍니다.
+                                뷰 카푸치노 컵 바닥에 네스프레소 밀크 초콜릿 스퀘어 하나를 깔아 줍니다.
                             </li>
                         `,
 							`
@@ -1999,7 +2008,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						sku: '7229.60',
 						title: '미숫가루 라테',
 						subTitle: 'MIXED GRAIN LATTE',
-						desc: '비건 레시피로 즐기는 부드러럽고 고소한 조화',
+						desc: '비건 레시피로 즐기는 부드럽고 고소한 조화',
 						ingredientsTitle: '비앙코 도피오 포 밀크',
 						ingredientsDesc: '비앙코 도피오 포 밀크 캡슐 1개, 미숫가루 15g, 케인 슈가 시럽 30g, 귀리 음료 120ml, 현미 시리얼 토핑',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/grainlatte_vl.jpg',
