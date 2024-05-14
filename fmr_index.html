@@ -1194,27 +1194,28 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					let productFullId = 'erp.kr.b2c/prod/' + sku;
 					let result;
 					if(window.napi){
-						result = window.napi.catalog().getStocks().then((dataStocks) => {
-							resolve();
-							return dataStocks[productFullId]
+						window.napi.catalog().getStocks().then((dataStocks) => {
+							result = dataStocks[productFullId];
+							if(!result){
+								this.stock = result;
+								this.el.addCartButton.style.filter = 'grayscale(100)';
+								this.el.addCartButton.style.cursor = 'not-allowed';
+							}else{
+								this.stock = result;
+								this.el.addCartButton.style.filter = 'none';
+								this.el.addCartButton.style.cursor = 'pointer';
+							}
+							resolve(result);
 						})
 					}else{
 						console.log('napi가 선언되지 않았습니다.');
 						result = false;
-						resolve();
-					}
-	
-					if(!result){
 						this.stock = result;
 						this.el.addCartButton.style.filter = 'grayscale(100)';
 						this.el.addCartButton.style.cursor = 'not-allowed';
-					}else{
-						this.stock = result;
-						this.el.addCartButton.style.filter = 'none';
-						this.el.addCartButton.style.cursor = 'pointer';
+						resolve(result);
 					}
 				});
-
 			}
 
 			renderAll() {
