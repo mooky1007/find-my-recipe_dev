@@ -569,7 +569,7 @@
 			border: 1px solid #ddd;
 			padding: 6px;
 			margin: 5px;
-			width:170px;
+			width: 170px;
 		}
 
 		.findRecipe-container.result-cont fieldset.svelte-1nhbbpw.svelte-1nhbbpw {
@@ -1319,20 +1319,21 @@
 							<div class="findRecipe-container" data-findRecipe-container>
 								<div class="section-tit">
 									<div class="tit-h3 lang-change" data-kr="3스텝으로 찾는" data-en="3스텝으로 찾는 영문"></div>
-									<div class="tit-h2">내게 맞는 레시피 찾기</div>
+									<div class="tit-h2 lang-change" data-kr="내게 맞는 레시피 찾기" data-en="내게 맞는 레시피 찾기 영문">
+									</div>
 								</div>
 								<!-- 스텝 선택하기 -->
 								<div class="step-cont box-inner">
 									<div class="step-progress">
 										<ul data-step>
 											<li class="active">
-												<span>얼음</span>
+												<span class="lang-change" data-kr="얼음" data-en="얼음 영문"></span>
 											</li>
 											<li>
-												<span>우유</span>
+												<span class="lang-change" data-kr="우유" data-en="우유 영문"></span>
 											</li>
 											<li>
-												<span>취향</span>
+												<span class="lang-change" data-kr="취향" data-en="취향 영문"></span>
 											</li>
 										</ul>
 									</div>
@@ -1342,7 +1343,7 @@
 									<div class="step-wr" data-step-cards>
 									</div>
 									<div class="btn-wr" button-prev>
-										<a href="#none">이전으로</a>
+										<a href="#none" class="lang-change" data-kr="이전으로" data-en="이전으로 영문"></a>
 									</div>
 								</div>
 								<!-- 스텝 선택하기 end -->
@@ -1418,10 +1419,12 @@
 										</div>
 										<a href="#none" button-restart><img
 												src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_reset.png"
-												alt="">다시하기</a>
+												alt=""><span class="lang-change" data-kr="다시하기"
+												data-en="다시하기 영문"></span></a>
 										<a href="#none" button-share><img
 												src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_link.png"
-												alt="">공유하기</a>
+												alt=""><span class="lang-change" data-kr="공유하기"
+												data-en="공유하기 영문"></span></a>
 									</div>
 									<div class="next-btn" data-other-type>
 										<a href="#none"><img
@@ -1433,7 +1436,8 @@
 								</div>
 								<div class="btn-wr">
 									<a href="https://www.nespresso.com/kr/ko/nespresso-coffee-recipes"
-										target="_blank">다른 레시피 보러가기 <img
+										target="_blank"><span class="lang-change" data-kr="다른 레시피 보러가기"
+											data-en="다른 레시피 보러가기 영문"></span><img
 											src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_right.png"
 											alt=""></a>
 								</div>
@@ -1464,7 +1468,8 @@
 	<!-- recipe rander js -->
 	<script>
 		class RecipeFinder {
-			constructor(data) {
+			constructor(lang, data) {
+				this.lang = lang || 'ko';
 				this.step = 0;
 				this.status = 0;
 				this.stepResult = '';
@@ -1537,7 +1542,8 @@
 
 				plusButton.addEventListener('click', () => {
 					if (!this.stock) {
-						alert('품절된 상품입니다.');
+						if (this.lang === 'ko') alert('품절된 상품입니다.');
+						else alert('Out of stock.');
 						return;
 					}
 					skuCount.value = parseInt(skuCount.value) + 10;
@@ -1545,7 +1551,8 @@
 
 				minusButton.addEventListener('click', () => {
 					if (!this.stock) {
-						alert('품절된 상품입니다.');
+						if (this.lang === 'ko') alert('품절된 상품입니다.');
+						else alert('Out of stock.');
 						return;
 					}
 					if (parseInt(skuCount.value) > 1) {
@@ -1594,7 +1601,8 @@
 
 			addCart() {
 				if (!this.stock) {
-					alert('품절된 상품입니다.');
+					if (this.lang === 'ko') alert('품절된 상품입니다.');
+					else alert('Out of stock.');
 					return;
 				}
 				if (this.el.skuCount.value === '0') {
@@ -1635,8 +1643,8 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				document.execCommand('copy');
 				document.body.removeChild(tempElem);
 
-				alert('URL이 복사되었습니다.');
-
+				if (this.lang === 'ko') alert('URL이 복사되었습니다.');
+				else alert('URL copied.');
 			}
 
 			restart() {
@@ -1822,25 +1830,39 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				});
 				stepLis[step].classList.add('active');
 				stepTitleNumber.innerHTML = `STEP${step + 1}`;
-				stepTitle.innerHTML = stepData[step].title;
+				if (this.lang === 'ko') {
+					stepTitle.innerHTML = stepData[step].title;
+				} else {
+					stepTitle.innerHTML = stepData[step].title_en;
+				}
 			}
 
 			renderChoiceTitle() {
 				const { choiceData, el } = this;
 				const { choiceTitle, choiceSubTitle } = el;
 
-				choiceTitle.innerHTML = choiceData[this.stepResult].ingredientsTitle || '';
-				//choiceSubTitle.innerHTML = choiceData[this.stepResult].vl.subTitle;
-				choiceSubTitle.innerHTML = '';
+				if (this.lang === 'ko') {
+					choiceTitle.innerHTML = choiceData[this.stepResult].ingredientsTitle || '';
+					choiceSubTitle.innerHTML = '';
+				} else {
+					choiceTitle.innerHTML = choiceData[this.stepResult].ingredientsTitle_en || '';
+					choiceSubTitle.innerHTML = '';
+				}
 			}
 
 			renderResultTitle() {
 				const { choiceData, el } = this;
 				const { resultTitle, resultSubTitle, resultDesc } = el;
 
-				resultTitle.innerHTML = choiceData[this.stepResult][this.type].title;
-				resultSubTitle.innerHTML = choiceData[this.stepResult][this.type].subTitle;
-				resultDesc.innerHTML = choiceData[this.stepResult][this.type].desc;
+				if (this.lang === 'ko') {
+					resultTitle.innerHTML = choiceData[this.stepResult][this.type].title;
+					resultSubTitle.innerHTML = choiceData[this.stepResult][this.type].subTitle;
+					resultDesc.innerHTML = choiceData[this.stepResult][this.type].desc;
+				} else {
+					resultTitle.innerHTML = choiceData[this.stepResult][this.type].title_en;
+					resultSubTitle.innerHTML = '';
+					resultDesc.innerHTML = choiceData[this.stepResult][this.type].desc_en;
+				}
 			}
 
 			renderPrevButton() {
@@ -1865,7 +1887,11 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const a = document.createElement('a');
 				a.classList.add('card');
 				const p = document.createElement('p');
-				p.innerHTML = cards[0].text;
+				if (this.lang === 'ko') {
+					p.innerHTML = cards[0].text;
+				} else {
+					p.innerHTML = cards[0].text_en;
+				}
 				const img = document.createElement('img');
 				img.src = cards[0].imgUrl;
 
@@ -1877,7 +1903,11 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const a2 = document.createElement('a');
 				a2.classList.add('card');
 				const p2 = document.createElement('p');
-				p2.innerHTML = cards[1].text;
+				if (this.lang === 'ko') {
+					p2.innerHTML = cards[1].text;
+				} else {
+					p2.innerHTML = cards[1].text_en;
+				}
 				const img2 = document.createElement('img');
 				img2.src = cards[1].imgUrl;
 
@@ -1944,7 +1974,11 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const img = document.createElement('img');
 				img.src = 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/type_ol.png';
 				p.appendChild(img);
-				p.innerHTML += '<span>오리지널 레시피 보기</span>';
+				if (this.lang === 'ko') {
+					p.innerHTML += '<span>오리지널 레시피 보기</span>';
+				} else {
+					p.innerHTML += '<span>Original Recipe</span>';
+				}
 				a.appendChild(p);
 
 				const img2 = document.createElement('img');
@@ -1960,7 +1994,11 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const img3 = document.createElement('img');
 				img3.src = 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/type_vl.png';
 				p2.appendChild(img3);
-				p2.innerHTML += '<span>버츄오 레시피 보기</span>';
+				if (this.lang === 'ko') {
+					p2.innerHTML += '<span>버츄오 레시피 보기</span>';
+				} else {
+					p2.innerHTML += '<span>Vertuo Recipe</span>';
+				}
 				a2.appendChild(p2);
 
 				const img4 = document.createElement('img');
@@ -1997,17 +2035,26 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const { choiceData, el } = this;
 				const { resultIngredientsTitle, resultIngredientsDesc, resultImage, resultHowToMake } = el;
 
-				resultImage.src = choiceData[this.stepResult][this.type].resultImgSrc;
-
-				//resultIngredientsTitle.innerHTML = choiceData[this.stepResult][this.type].ingredientsTitle + ' 캡슐 1개';
-				resultIngredientsDesc.innerHTML = choiceData[this.stepResult][this.type].ingredientsDesc;
-
 				resultHowToMake.innerHTML = '';
-				choiceData[this.stepResult][this.type].howToMake.forEach((li) => {
-					const div = document.createElement('div');
-					div.innerHTML = li;
-					resultHowToMake.appendChild(div);
-				});
+				resultImage.src = choiceData[this.stepResult][this.type].resultImgSrc;
+				if (this.lang === 'ko') {
+					resultIngredientsDesc.innerHTML = choiceData[this.stepResult][this.type].ingredientsDesc;
+
+					choiceData[this.stepResult][this.type].howToMake.forEach((li) => {
+						const div = document.createElement('div');
+						div.innerHTML = li;
+						resultHowToMake.appendChild(div);
+					});
+				} else {
+					resultIngredientsDesc.innerHTML = choiceData[this.stepResult][this.type].ingredientsDesc_en;
+
+					choiceData[this.stepResult][this.type].howToMake_en.forEach((li) => {
+						const div = document.createElement('div');
+						div.innerHTML = li;
+						resultHowToMake.appendChild(div);
+					});
+				}
+
 			}
 
 			async renderPage() {
@@ -2043,8 +2090,8 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 		} 
 	</script>
 	<script>
-		const lang = window.location.pathname.split('/')[2];
-		//const lang = 'en';
+		// const lang = window.location.pathname.split('/')[2];
+		const lang = 'en';
 
 		let langChangeElementList = document.querySelectorAll(".lang-change");
 
@@ -2059,55 +2106,64 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 			}
 		});
 
-		const recipeFinder = new RecipeFinder({
+		const recipeFinder = new RecipeFinder(lang, {
 			step: [
 				{
 					title: '어떤 온도로 즐기시나요?',
+					title_en: '',
 					cards: [
 						{
 							id: 'h',
 							select: 'hot',
 							text: '따뜻하게',
+							text_en: '',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/hot.jpg',
 						},
 						{
 							id: 'i',
 							select: 'ice',
 							text: '차갑게',
+							text_en: '',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ice.jpg',
 						},
 					],
 				},
 				{
 					title: '밀크 레시피로 즐기시나요?',
+					title_en: '',
 					cards: [
 						{
 							id: 'b',
 							select: 'black',
 							text: '블랙으로 깔끔하게',
+							text_en: '',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/black.jpg',
 						},
 						{
 							id: 'm',
 							select: 'latte',
 							text: '우유와 함께 부드럽게',
+							text_en: '',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/milk.jpg',
 						},
 					],
 				},
 				{
 					title: '어떤 느낌의 음료를 원하세요?',
+					title_en: '',
 					cards: [
 						{
 							id: 'f',
 							select: 'fruity',
 							text: '산뜻한(프루티)',
+							text_en: '',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/fruity.jpg',
 						},
 						{
 							id: 'n',
 							select: 'nutty',
 							text: '고소한(너티)',
+							text_en: '',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/nutty.jpg',
 						},
 					],
@@ -2123,6 +2179,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						title_en: 'ICED GRAPEFRUIT ESPRESSO ',
 						subTitle: 'ICED GRAPEFRUIT ESPRESSO',
 						desc: '나른한 오후에 만끽하는 청량함',
+						desc_en: '',
 						ingredientsDesc: '리스트레토/리스트레토 디카페나토 캡슐 1개, 쉬크르 루 1스틱, 자몽 시럽 10ml, 얼음 6조각 (조각 당 30g)',
 						ingredientsDesc_en: 'Ristretto/Ristretto Decaffeinato capsule 1, Grapefruit syrup 10ml, Brown sugar stick 1, Ice cubes 6',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/grapefruit_ol.jpg',
@@ -2168,10 +2225,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					vl: {
 						sku: '7223.60',
 						title: '루비 코스모폴리탄',
+						title_en: 'RUBY COSMOPOLITAN',
 						subTitle: 'RUBY COSMOPOLITAN',
 						desc: '매혹적인 석류와 상쾌한 아이스 커피의 랑데부',
-						ingredientsTitle: '아이스 레제로',
+						desc_en: '',
 						ingredientsDesc: '아이스 레제로 캡슐 1개 (80ml), 얼음 150g, 케인슈가 시럽 10ml, 석류주스 80ml',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/cosmopolitan_vl.jpg',
 						howToMake: [
 							`
@@ -2199,6 +2258,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/cosmopolitan_vl.jpg',
 					},
 				},
@@ -2210,8 +2272,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						title: '마자그랑',
 						title_en: 'MAJAGRANG',
 						subTitle: 'MAJAGRANG',
+						desc_en: '',
 						desc: '고소함과 상큼함의 이색적인 조화',
-						ingredientsTitle: '볼루토',
+						desc_en: '',
 						ingredientsDesc: '볼루토/볼루토 디카페나토 캡슐 1개, 얼음 6조각 (조각 당 30g), 레몬청 40g, 탄산수 70ml',
 						ingredientsDesc_en: 'Volluto/Volluto Decaffeinato capsule 1, Lemon concentrate 40g, Sparkling water 70ml, Ice cubes 6',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/majagrang_ol.jpg',
@@ -2255,15 +2318,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/majagrang_ol.jpg',
 					},
 					vl: {
 						sku: '7224.60',
 						title: '키아로 샤케라토',
+						title_en: 'CHIARO SHAKERATO',
 						subTitle: 'CHIARO SHAKERATO',
 						desc: '부드럽고 시원하게 즐기는 강렬한 한잔',
-						ingredientsTitle: '더블 에스프레소 키아로',
+						desc_en: '',
 						ingredientsDesc: '더블 에스프레소 키아로 캡슐 1개, 쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/chiaro_vl.jpg',
 						howToMake: [
 							`
@@ -2294,6 +2362,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/chiaro_vl.jpg',
 					},
 				},
@@ -2303,10 +2374,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					ol: {
 						sku: '7750.40',
 						title: '코코넛 돌체 라테',
+						title_en: 'COCONUT DOLCE LATTE',
 						subTitle: 'COCONUT DOLCE LATTE',
 						desc: '더위를 식히는 이국적인 아이스 커피',
-						ingredientsTitle: '아이스 코코넛향 커피',
+						desc_en: '',
 						ingredientsDesc: '오리지널 아이스 코코넛향 캡슐 1개(40ml), 얼음 4조각 (조각 당 30g), 우유 70 ml, 연유 10 ml',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/coconutdolce_ol.jpg',
 						howToMake: [
 							`
@@ -2331,15 +2404,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/coconutdolce_ol.jpg',
 					},
 					vl: {
 						sku: '7185.60',
 						title: '코코 피나콜라다',
+						title_en: 'COCO PINACOLADA',
 						subTitle: 'COCO PINACOLADA',
 						desc: '휴양지를 연상시키는 파인애플과  코코넛의 이국적이며 상큼한 조합',
-						ingredientsTitle: '아이스 트로피컬 코코넛향 커피',
+						desc_en: '',
 						ingredientsDesc: '아이스 트로피컬 코코넛향 캡슐 1개 (230ml), 파인애플 샤베트 1개, 연유 5ml, 코코넛 밀크 10ml, 코코넛 젤리 5g',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/pinacolada_vl.jpg',
 						howToMake: [
 							`
@@ -2374,6 +2452,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/pinacolada_vl.jpg',
 					},
 				},
@@ -2384,9 +2465,11 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 						sku: '7738.40',
 						title: '카페 살렌티노',
 						title_en: 'CAFE SALENTINO',
+						title_en: 'CAFE SALENTINO',
 						subTitle: 'CAFE SALENTINO',
+						desc_en: '',
 						desc: '색다르게 즐기는 아이스 레시피',
-						ingredientsTitle: '이스탄불',
+						desc_en: '',
 						ingredientsDesc: '이스탄불 캡슐 1개, 얼음 6조각 (조각 당 30g), 아몬드 밀크 80ml',
 						ingredientsDesc_en: 'Istanbul capsule 1, Almond milk 80ml, Ice cubes 6',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
@@ -2410,15 +2493,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
 					},
 					vl: {
 						sku: '7019.60',
 						title: '써니 아포가토',
+						title_en: 'SUNNY AFFOGATO',
 						subTitle: 'SUNNY AFFOGATO',
 						desc: '따뜻한 햇살을 머금은 눈부신 한잔',
-						ingredientsTitle: '아이스 써니 아몬드 바닐라향 커피',
+						desc_en: '',
 						ingredientsDesc: '아이스 써니 아몬드 바닐라향 캡슐 1개 (80ml), 우유 20ml, 생크림 20ml, 연유 10ml, 바닐라 익스트랙 1-2방울, 쉬크르 루 1개',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/sunny_vl.jpg',
 						howToMake: [
 							`
@@ -2454,6 +2542,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/sunny_vl.jpg',
 					},
 				},
@@ -2463,10 +2554,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					ol: {
 						sku: '7723.70',
 						title: '허니 블랙',
+						title_en: 'HONEY BLACK',
 						subTitle: 'HONEY BLACK',
 						desc: '소풍에 낭만을 더해보세요!',
-						ingredientsTitle: '니카라과',
+						desc_en: '',
 						ingredientsDesc: '니카라과 캡슐 1개, 꿀 20ml',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/honeyblack_ol.jpg',
 						howToMake: [
 							`
@@ -2482,15 +2575,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/honeyblack_ol.jpg',
 					},
 					vl: {
 						sku: '7220.60',
 						title: '페퍼민트 아메리카노',
+						title_en: 'PEPPERMINT AMERICANO',
 						subTitle: 'PEPPERMINT AMERICANO',
 						desc: '아침을 상쾌하게 깨우는 따뜻한 룽고 커피',
-						ingredientsTitle: '이니지오',
+						desc_en: '',
 						ingredientsDesc: '이니지오 캡슐 1개, 페퍼민트 티백, 페퍼민트 잎',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/peppermint_vl.jpg',
 						howToMake: [
 							`
@@ -2512,6 +2610,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/peppermint_vl.jpg',
 					},
 				},
@@ -2521,10 +2622,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					ol: {
 						sku: '7757.40',
 						title: '버터 스카치 아메리카노',
+						title_en: 'BUTTER SCOTCH AMERICANO',
 						subTitle: 'BUTTER SCOTCH AMERICANO',
 						desc: '달콤한 풍미가 돋보이는 스윗 아메리카노',
-						ingredientsTitle: '부에노스 아이레스 룽고',
+						desc_en: '',
 						ingredientsDesc: '부에노스 아이레스 룽고 캡슐 1개, 버터 스카치 시럽 10ml',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/butterscotch_ol.jpg',
 						howToMake: [
 							`
@@ -2540,15 +2643,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li> 
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/butterscotch_ol.jpg',
 					},
 					vl: {
 						sku: '7219.60',
 						title: '돌체리카노',
 						title_en: 'Dolce-ricano',
+						title_en: 'Dolce-ricano',
 						subTitle: 'DOLCERICANO',
+						desc_en: '',
 						desc: '부드럽고 달콤하게 입 안을 깨우는 블랙 커피',
-						ingredientsTitle: '더블 에스프레소 돌체',
+						desc_en: '',
 						ingredientsDesc: '더블 에스프레소 돌체 캡슐 1개, 따뜻한 물 120ml ',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/dolcericano_vl.jpg',
 						howToMake: [
@@ -2568,6 +2676,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/dolcericano_vl.jpg',
 					},
 				},
@@ -2577,10 +2688,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					ol: {
 						sku: '7759.40',
 						title: '레몬 크림 라테',
+						title_en: 'LEMON CREAM LATTE',
 						subTitle: 'LEMON CREAM LATTE',
 						desc: '부드럽게 감싸는 새콤달콤함으로 향기로운 시간',
-						ingredientsTitle: '상하이 룽고',
+						desc_en: '',
 						ingredientsDesc: '상하이 룽고 캡슐 1개, 쉬크르 루 1스틱, 휘핑 크림 20g, 레몬 시럽 20g',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/remoncream_ol.jpg',
 						howToMake: [
 							`
@@ -2602,15 +2715,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/remoncream_ol.jpg',
 					},
 					vl: {
 						sku: '7276.60',
 						title: '루비 오렌지 비앙코',
+						title_en: 'RUBY ORANGE BIANCO',
 						subTitle: 'RUBY ORANGE BIANCO',
 						desc: '달콤함과 상큼함이 조화로운 매혹적인 한잔',
-						ingredientsTitle: '엘살바도르',
+						desc_en: '',
 						ingredientsDesc: '엘살바도르 캡슐 1개, 오렌지청 40g, 히비스커스 농축액 1ml, 우유 50ml, 얼음 2조각(60g)',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/rubyorange_vl.jpg',
 						howToMake: [
 							`
@@ -2632,6 +2750,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/rubyorange_vl.jpg',
 					},
 				},
@@ -2641,10 +2762,12 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					ol: {
 						sku: '7765.40',
 						title: '코코 리치 화이트',
+						title_en: 'COCO RICH WHITE',
 						subTitle: 'COCO RICH WHITE',
 						desc: '나를 위한 달콤하고 부드러운 선물',
-						ingredientsTitle: '아르페지오/아르페지오 디카페나토',
+						desc_en: '',
 						ingredientsDesc: '아르페지오/아르페지오 디카페나토 캡슐 1개, 밀크 초콜릿 스퀘어 1개, 바닐라 크림 10g, 우유 40ml',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/cocorich_ol.jpg',
 						howToMake: [
 							`
@@ -2672,15 +2795,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             </li>
                         `,
 						],
+						howToMake_en: [
+							``, ``, ``
+						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/cocorich_ol.jpg',
 					},
 					vl: {
 						sku: '7229.60',
 						title: '미숫가루 라테',
+						title_en: 'MIXED GRAIN LATTE',
 						subTitle: 'MIXED GRAIN LATTE',
 						desc: '비건 레시피로 즐기는 부드럽고 고소한 조화',
-						ingredientsTitle: '비앙코 도피오 포 밀크',
+						desc_en: '',
 						ingredientsDesc: '비앙코 도피오 포 밀크 캡슐 1개, 미숫가루 15g, 케인 슈가 시럽 30g, 귀리 음료 120ml, 현미 시리얼 토핑',
+						ingredientsDesc_en: '',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/grainlatte_vl.jpg',
 						howToMake: [
 							`
@@ -2701,6 +2829,9 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                                 커피를 부어주고 기호에 따라 현미 시리얼 토핑을 얹어주세요.
                             </li>
                         `,
+						],
+						howToMake_en: [
+							``, ``, ``
 						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/grainlatte_vl.jpg',
 					},
