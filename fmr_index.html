@@ -10,7 +10,7 @@
 		href="https://www.nespresso.com/_ui/generated/responsiveLoadedFirst.css?v=fd96da20a0167484301a7a19c2a1ec4e246299f7">
 	<link rel="stylesheet"
 		href="https://www.nespresso.com/shared_res/agility/next-components/foundations/v1.1/css/foundations.css">
- 
+
 	<!-- 컨텐츠 이동 시 삭제 -->
 
 	<!-- Google Tag Manager -->
@@ -28,7 +28,7 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH9FPVL" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	<style> 
+	<style>
 		@font-face {
 			font-family: "Noto Sans KR";
 			font-style: normal;
@@ -69,7 +69,8 @@
 			font-style: normal;
 			font-weight: 900;
 			src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff2") format("woff2"), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff") format("woff")
-		} 
+		}
+
 		html {
 			font-size: clamp(5px, 1.302vw, 10px);
 		}
@@ -140,153 +141,699 @@
 
 
 		/* findRecipe common */
-		.findRecipe2024-wrap{ background:url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/bg_stripe.jpg'); line-height: 1.4;}   
-		.findRecipe-container{position:relative; z-index:2; padding:130px 0; text-align: center;}
-		.findRecipe-container::before{content:''; width:100%; height:100%; background:url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/bg_top.png') no-repeat top center / 100% auto; position:absolute; left:0; top:0; z-index:-1;}
-		.findRecipe-container::after{content:''; width:100%; height:100%; background:url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/bg_bottom.png') no-repeat bottom center / 100% auto; position:absolute; left:0; bottom:0; z-index:-1;}
-		.findRecipe-container img {max-width: 100%;vertical-align:top;}
-		.findRecipe-container .btn-wr{text-align: center; display: flex; flex-wrap:wrap; justify-content: center;align-items: center;}
-		.findRecipe-container .btn-wr a{display:inline-block; background: #000; color: #fff; width:40%; max-width:200px; height:50px; line-height: 50px; font-size: 18px; margin:5px;}
-		.findRecipe-container .btn-wr a img{margin-right: 10px; vertical-align:middle;     transform: translateY(-3px);} 
-		.findRecipe-container > .section-tit{color:#fff; margin-bottom:80px;} 
-		.findRecipe-container .box-tit{width:90%; max-width:600px; margin:0 auto;}
-		.findRecipe-container .box-tit p{font-size: 22px; font-weight: 500; margin-top:30px; }
-		.findRecipe-container .tit-h2{font-size: 45px; font-weight: 600;}
-		.findRecipe-container .tit-h3{font-size: 30px; font-weight: 600;} 
-		.findRecipe-container .tit-h4{font-size: 20px; font-weight: 600; color: #ea6f46;  margin-bottom: 10px;}  
-		.findRecipe-container .box-inner{padding:80px 0; background: #fff; border-radius:20px; width:90%; max-width:960px; margin:0 auto; position:relative;}  
+		.findRecipe2024-wrap {
+			background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/bg_stripe.jpg');
+			line-height: 1.4;
+		}
+
+		.findRecipe-container {
+			position: relative;
+			z-index: 2;
+			padding: 130px 0;
+			text-align: center;
+		}
+
+		.findRecipe-container::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/bg_top.png') no-repeat top center / 100% auto;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: -1;
+		}
+
+		.findRecipe-container::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/bg_bottom.png') no-repeat bottom center / 100% auto;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: -1;
+		}
+
+		.findRecipe-container img {
+			max-width: 100%;
+			vertical-align: top;
+		}
+
+		.findRecipe-container .btn-wr {
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.findRecipe-container .btn-wr a {
+			display: inline-block;
+			background: #000;
+			color: #fff;
+			width: 40%;
+			max-width: 200px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 18px;
+			margin: 5px;
+		}
+
+		.findRecipe-container .btn-wr a img {
+			margin-right: 10px;
+			vertical-align: middle;
+			transform: translateY(-3px);
+		}
+
+		.findRecipe-container>.section-tit {
+			color: #fff;
+			margin-bottom: 80px;
+		}
+
+		.findRecipe-container .box-tit {
+			width: 90%;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.findRecipe-container .box-tit p {
+			font-size: 22px;
+			font-weight: 500;
+			margin-top: 30px;
+		}
+
+		.findRecipe-container .tit-h2 {
+			font-size: 45px;
+			font-weight: 600;
+		}
+
+		.findRecipe-container .tit-h3 {
+			font-size: 30px;
+			font-weight: 600;
+		}
+
+		.findRecipe-container .tit-h4 {
+			font-size: 20px;
+			font-weight: 600;
+			color: #ea6f46;
+			margin-bottom: 10px;
+		}
+
+		.findRecipe-container .box-inner {
+			padding: 80px 0;
+			background: #fff;
+			border-radius: 20px;
+			width: 90%;
+			max-width: 960px;
+			margin: 0 auto;
+			position: relative;
+		}
 
 
 		/* step */
-		.findRecipe-container .step-cont{ max-width:1120px;  padding:40px 0 80px;} 
-		.findRecipe-container .step-cont .step-progress{max-width:300px; margin:0 auto 60px;}
-		.findRecipe-container .step-cont .step-progress ul{position:relative; display:flex; align-items:flex-start; justify-content:space-between;}
-		.findRecipe-container .step-cont .step-progress ul::after{content:'';  width:calc(100% - 20px); height:2px; background: #ddd; left:10px; top:3px; position:absolute;}
-		.findRecipe-container .step-cont .step-progress ul li{position:relative; z-index:2;list-style:none;font-size: 14px; color: #666;}
-		.findRecipe-container .step-cont .step-progress ul li::before{content:''; width:9px; height:9px; background: #ddd; border-radius:50%; display:block; margin:0 auto 10px; } 
-		.findRecipe-container .step-cont .step-progress ul li.active{color: #ea6f46;}
-		.findRecipe-container .step-cont .step-progress ul li.active::before{background: #ea6f46;}
-		.findRecipe-container .step-cont .step-wr{max-width:740px; width:90%; margin:40px auto; height:435px;}
-		.findRecipe-container .step-cont .step-wr .card {display:block; cursor:pointer; width:100%; border-radius:20px; overflow:hidden; position:relative;}
-		.findRecipe-container .step-cont .step-wr .card:before{content:''; width:100%; height:50%; position:absolute; left:0; top:0;     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);}
-		.findRecipe-container .step-cont .step-wr .card p{position:absolute; top:0; font-size: 24px; width:100%; color: #fff; padding-top: 40px; font-weight: 600;}
-		.findRecipe-container .step-cont .step-wr .left{  width: 47%;   height: 100%;  position: relative;  z-index: 1; left: 0;}
-		.findRecipe-container .step-cont .step-wr .right{  width: 47%;height: 100%; position: relative; left: 53%;top: -100%;z-index: 2;}  
+		.findRecipe-container .step-cont {
+			max-width: 1120px;
+			padding: 40px 0 80px;
+		}
+
+		.findRecipe-container .step-cont .step-progress {
+			max-width: 300px;
+			margin: 0 auto 60px;
+		}
+
+		.findRecipe-container .step-cont .step-progress ul {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		.findRecipe-container .step-cont .step-progress ul::after {
+			content: '';
+			width: calc(100% - 20px);
+			height: 2px;
+			background: #ddd;
+			left: 10px;
+			top: 3px;
+			position: absolute;
+		}
+
+		.findRecipe-container .step-cont .step-progress ul li {
+			position: relative;
+			z-index: 2;
+			list-style: none;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.findRecipe-container .step-cont .step-progress ul li::before {
+			content: '';
+			width: 9px;
+			height: 9px;
+			background: #ddd;
+			border-radius: 50%;
+			display: block;
+			margin: 0 auto 10px;
+		}
+
+		.findRecipe-container .step-cont .step-progress ul li.active {
+			color: #ea6f46;
+		}
+
+		.findRecipe-container .step-cont .step-progress ul li.active::before {
+			background: #ea6f46;
+		}
+
+		.findRecipe-container .step-cont .step-wr {
+			max-width: 740px;
+			width: 90%;
+			margin: 40px auto;
+			height: 435px;
+		}
+
+		.findRecipe-container .step-cont .step-wr .card {
+			display: block;
+			cursor: pointer;
+			width: 100%;
+			border-radius: 20px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.findRecipe-container .step-cont .step-wr .card:before {
+			content: '';
+			width: 100%;
+			height: 50%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);
+		}
+
+		.findRecipe-container .step-cont .step-wr .card p {
+			position: absolute;
+			top: 0;
+			font-size: 24px;
+			width: 100%;
+			color: #fff;
+			padding-top: 40px;
+			font-weight: 600;
+		}
+
+		.findRecipe-container .step-cont .step-wr .left {
+			width: 47%;
+			height: 100%;
+			position: relative;
+			z-index: 1;
+			left: 0;
+		}
+
+		.findRecipe-container .step-cont .step-wr .right {
+			width: 47%;
+			height: 100%;
+			position: relative;
+			left: 53%;
+			top: -100%;
+			z-index: 2;
+		}
 
 
 		/* choice */
-		.findRecipe-container .choice-cont .recipe-choice {width:90%; position:relative; max-width:740px; margin:40px auto 0; height:435px; border-radius:20px; overflow:hidden;}
-		.findRecipe-container .choice-cont .recipe-choice .card{  width: 50%;   height: 100%;  position: absolute;  z-index: 1; transition:all ease .6s; left: 0;}
-		.findRecipe-container .choice-cont .recipe-choice .card a{display:block; width:100%; height:100%;}
-		.findRecipe-container .choice-cont .recipe-choice .card a:before{content:''; width:100%; height:100%;  background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), transparent); position:absolute; left:0; top:0; transition:all ease .3s; opacity:0.7;}
-		.findRecipe-container .choice-cont .recipe-choice .card p{position:absolute; left:0; top:50%; transform:translateY(-50%); width:100%; font-size: 24px;font-weight: 600; text-align: center; transition:all ease .3s;}
-		.findRecipe-container .choice-cont .recipe-choice .card p span{display:block; }
-		.findRecipe-container .choice-cont .recipe-choice .card p span:after{content:''; width:12px; height:19px; background:url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/arr_right.png') no-repeat center center / contain; display:inline-block; margin-left: 10px;}
-		.findRecipe-container .choice-cont .recipe-choice .card + .card{ left:50%} 
-		.findRecipe-container .choice-cont .recipe-choice .card a > img{width:100%; height:100%; object-fit:cover;}
-		.findRecipe-container .choice-cont .recipe-choice .card a:hover:before{ opacity:.4;}   
+		.findRecipe-container .choice-cont .recipe-choice {
+			width: 90%;
+			position: relative;
+			max-width: 740px;
+			margin: 40px auto 0;
+			height: 435px;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+			transition: all ease .6s;
+			left: 0;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card a:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), transparent);
+			position: absolute;
+			left: 0;
+			top: 0;
+			transition: all ease .3s;
+			opacity: 0.7;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card p {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			font-size: 24px;
+			font-weight: 600;
+			text-align: center;
+			transition: all ease .3s;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card p span {
+			display: block;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card p span:after {
+			content: '';
+			width: 12px;
+			height: 19px;
+			background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/arr_right.png') no-repeat center center / contain;
+			display: inline-block;
+			margin-left: 10px;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card+.card {
+			left: 50%
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card a>img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.findRecipe-container .choice-cont .recipe-choice .card a:hover:before {
+			opacity: .4;
+		}
 
 		/* result */
-		.findRecipe2024-wrap .findRecipe-container.result-cont{position:relative; width:100%; overflow:hidden;background-color: #ddc5ac;}
-		.findRecipe2024-wrap .findRecipe-container.result-cont::before {mix-blend-mode: overlay;content: "";position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);display: block;width: 1000px;aspect-ratio: 1 / 1;border-radius: 9999px;background-color: rgba(255, 255, 255, 0.5);filter: blur(200px);}
+		.findRecipe2024-wrap .findRecipe-container.result-cont {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			background-color: #ddc5ac;
+		}
 
-		.findRecipe-container.result-cont .next-btn{position:absolute; top:30px;   right:30px; z-index:2; filter:invert(1);}
-		.findRecipe-container.result-cont .next-btn a{display:flex; align-items:center; gap:20px;}
-		.findRecipe-container.result-cont .next-btn img:last-child{height:16px;}
-		.findRecipe-container.result-cont .result-img{ width:90%; max-width:818px;  margin:40px auto;border-radius:20px; overflow:hidden;}
-		.findRecipe-container.result-cont .result-recipe{width:90%; max-width:540px; margin:0 auto;}
-		.findRecipe-container.result-cont .result-recipe p{ font-size: 18px;}
-		.findRecipe-container.result-cont .result-recipe .ingredients {padding-top: 20px;padding-bottom: 40px; margin-bottom: 40px; border-bottom:1px solid #ddd}
-		.findRecipe-container.result-cont .result-recipe .ingredients .tit-h4{color: #000;}
-		.findRecipe-container.result-cont .result-recipe .tit-h3{color: #ea6f46;}
-		.findRecipe-container.result-cont .result-recipe .ingredients p{   max-width:400px; margin:0 auto; margin-top: 10px;}
-		.findRecipe-container.result-cont .result-recipe .how-to-make{margin-bottom: 40px;} 
-		.findRecipe-container.result-cont .result-recipe .how-to-make .tit-h4{color: #000;}
-		.findRecipe-container.result-cont .result-recipe .how-to-make ul li{margin:20px 0;font-size: 18px; text-align:left; padding-left:18px; text-indent:-18px;}
-		.findRecipe-container.result-cont .result-recipe .how-to-make ul li strong{color: #ea6f46; font-size: 1.2em;}
-		.findRecipe-container.result-cont .result-recipe .how-to-make ul li span{display:block; color:#999; font-size: 16px;     padding-left: 8px;  text-indent: -8px; margin-top: 7px; font-weight: 300;}
-		.findRecipe-container.result-cont > .btn-wr{margin-top: 40px;}
-		.findRecipe-container.result-cont > .btn-wr a{max-width:240px; width:100%; height:60px; line-height:60px;}
-		.findRecipe-container.result-cont > .btn-wr a img{margin-right: 0; margin-left: 10px;}
+		.findRecipe2024-wrap .findRecipe-container.result-cont::before {
+			mix-blend-mode: overlay;
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: block;
+			width: 1000px;
+			aspect-ratio: 1 / 1;
+			border-radius: 9999px;
+			background-color: rgba(255, 255, 255, 0.5);
+			filter: blur(200px);
+		}
+
+		.findRecipe-container.result-cont .next-btn {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			z-index: 2;
+			filter: invert(1);
+		}
+
+		.findRecipe-container.result-cont .next-btn a {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.findRecipe-container.result-cont .next-btn img:last-child {
+			height: 16px;
+		}
+
+		.findRecipe-container.result-cont .result-img {
+			width: 90%;
+			max-width: 818px;
+			margin: 40px auto;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.findRecipe-container.result-cont .result-recipe {
+			width: 90%;
+			max-width: 540px;
+			margin: 0 auto;
+		}
+
+		.findRecipe-container.result-cont .result-recipe p {
+			font-size: 18px;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .ingredients {
+			padding-top: 20px;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			border-bottom: 1px solid #ddd
+		}
+
+		.findRecipe-container.result-cont .result-recipe .ingredients .tit-h4 {
+			color: #000;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .tit-h3 {
+			color: #ea6f46;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .ingredients p {
+			max-width: 400px;
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .how-to-make {
+			margin-bottom: 40px;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .how-to-make .tit-h4 {
+			color: #000;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .how-to-make ul li {
+			margin: 20px 0;
+			font-size: 18px;
+			text-align: left;
+			padding-left: 18px;
+			text-indent: -18px;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .how-to-make ul li strong {
+			color: #ea6f46;
+			font-size: 1.2em;
+		}
+
+		.findRecipe-container.result-cont .result-recipe .how-to-make ul li span {
+			display: block;
+			color: #999;
+			font-size: 16px;
+			padding-left: 8px;
+			text-indent: -8px;
+			margin-top: 7px;
+			font-weight: 300;
+		}
+
+		.findRecipe-container.result-cont>.btn-wr {
+			margin-top: 40px;
+		}
+
+		.findRecipe-container.result-cont>.btn-wr a {
+			max-width: 240px;
+			width: 100%;
+			height: 60px;
+			line-height: 60px;
+		}
+
+		.findRecipe-container.result-cont>.btn-wr a img {
+			margin-right: 0;
+			margin-left: 10px;
+		}
 
 		/* 구매하기 연동 */
-		.findRecipe-container.result-cont #recipe-addtobag{display:inline-block; border:1px solid #ddd; padding:6px; margin:5px;}
-		.findRecipe-container.result-cont fieldset.svelte-1nhbbpw.svelte-1nhbbpw {display: flex;flex-wrap: wrap;align-items: center;border-radius: 5px;gap: 5px;}
-		.findRecipe-container.result-cont .minus.svelte-1nhbbpw.svelte-1nhbbpw, 
-		.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw {flex: 0 0 auto;width: 30px;aspect-ratio: 1 / 1;font-size: 0;border-radius: inherit;}
-		.findRecipe-container.result-cont button.svelte-1nhbbpw.svelte-1nhbbpw, 
-		.findRecipe-container.result-cont input.svelte-1nhbbpw.svelte-1nhbbpw {margin: 0;padding: 0;color: inherit;font: inherit;border: none;background-color: transparent;cursor: pointer;display: block;  position: relative;}
-		.findRecipe-container.result-cont .minus.svelte-1nhbbpw.svelte-1nhbbpw::before, 
-		.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw::before {content: "";display: block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 50%;height: 2px;background-color: #000;}
-		.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw::after {content: "";display: block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 50%;height: 2px;background-color: #000;transform: translate(-50%, -50%) rotate(90deg);}
-		.findRecipe-container.result-cont .quantity.svelte-1nhbbpw.svelte-1nhbbpw {display: block;align-self: stretch;min-width: -webkit-min-content;min-width: min-content;width: 1em;}
-		.findRecipe-container.result-cont .quantity.svelte-1nhbbpw input[type=number].svelte-1nhbbpw {-moz-appearance: textfield;}
-		.findRecipe-container.result-cont .quantity.svelte-1nhbbpw input.svelte-1nhbbpw {width: 100%;height: 100%;font-size: 18px;color: black;background: white;display: inline-block;text-align: center;}
-		.findRecipe-container.result-cont button.svelte-1nhbbpw.svelte-1nhbbpw, 
-		.findRecipe-container.result-cont input.svelte-1nhbbpw.svelte-1nhbbpw {margin: 0;padding: 0;color: inherit;font: inherit;border: none;background-color: transparent;cursor: pointer;display: block;position: relative;} 
-		.findRecipe-container.result-cont .buy.svelte-1nhbbpw.svelte-1nhbbpw {flex: 0 1 auto;color: white;margin: 0;font-size: 18px;font-weight: 500;text-transform: uppercase;padding: 6px;border-radius: inherit;background-color: #ea6f46;min-width: 40px;} 
-		.findRecipe-container.result-cont .buy.svelte-1nhbbpw.svelte-1nhbbpw img{margin-top: 2px;}
-		 
+		.findRecipe-container.result-cont #recipe-addtobag {
+			display: inline-block;
+			border: 1px solid #ddd;
+			padding: 6px;
+			margin: 5px;
+			width:170px;
+		}
 
-		/********************************************************** responsive **********************************************************/ 
-		@media screen and (min-width: 991px){ 
+		.findRecipe-container.result-cont fieldset.svelte-1nhbbpw.svelte-1nhbbpw {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			border-radius: 5px;
+			gap: 5px;
+		}
+
+		.findRecipe-container.result-cont .minus.svelte-1nhbbpw.svelte-1nhbbpw,
+		.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw {
+			flex: 0 0 auto;
+			width: 30px;
+			aspect-ratio: 1 / 1;
+			font-size: 0;
+			border-radius: inherit;
+		}
+
+		.findRecipe-container.result-cont button.svelte-1nhbbpw.svelte-1nhbbpw,
+		.findRecipe-container.result-cont input.svelte-1nhbbpw.svelte-1nhbbpw {
+			margin: 0;
+			padding: 0;
+			color: inherit;
+			font: inherit;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			display: block;
+			position: relative;
+		}
+
+		.findRecipe-container.result-cont .minus.svelte-1nhbbpw.svelte-1nhbbpw::before,
+		.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50%;
+			height: 2px;
+			background-color: #000;
+		}
+
+		.findRecipe-container.result-cont .plus.svelte-1nhbbpw.svelte-1nhbbpw::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50%;
+			height: 2px;
+			background-color: #000;
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+
+		.findRecipe-container.result-cont .quantity.svelte-1nhbbpw.svelte-1nhbbpw {
+			display: block;
+			align-self: stretch;
+			min-width: -webkit-min-content;
+			min-width: min-content;
+			width: 1em;
+		}
+
+		.findRecipe-container.result-cont .quantity.svelte-1nhbbpw input[type=number].svelte-1nhbbpw {
+			-moz-appearance: textfield;
+		}
+
+		.findRecipe-container.result-cont .quantity.svelte-1nhbbpw input.svelte-1nhbbpw {
+			width: 100%;
+			height: 100%;
+			font-size: 18px;
+			color: black;
+			background: white;
+			display: inline-block;
+			text-align: center;
+		}
+
+		.findRecipe-container.result-cont button.svelte-1nhbbpw.svelte-1nhbbpw,
+		.findRecipe-container.result-cont input.svelte-1nhbbpw.svelte-1nhbbpw {
+			margin: 0;
+			padding: 0;
+			color: inherit;
+			font: inherit;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			display: block;
+			position: relative;
+		}
+
+		.findRecipe-container.result-cont .buy.svelte-1nhbbpw.svelte-1nhbbpw {
+			flex: 0 1 auto;
+			color: white;
+			margin: 0;
+			font-size: 18px;
+			font-weight: 500;
+			text-transform: uppercase;
+			padding: 6px;
+			border-radius: inherit;
+			background-color: #ea6f46;
+			min-width: 40px;
+		}
+
+		.findRecipe-container.result-cont .buy.svelte-1nhbbpw.svelte-1nhbbpw img {
+			margin-top: 2px;
+		}
+
+
+		/********************************************************** responsive **********************************************************/
+		@media screen and (min-width: 991px) {
+
 			/* font resizing */
 			html {
 				font-size: 16px;
 				scroll-behavior: smooth;
-			}   
+			}
 		}
 
 
-		@media screen and (max-width:990px) {   
-			/* main */  
-			.findRecipe-container{padding:50px 0;}
-			.findRecipe-container .box-inner{width:96%; padding:40px 0;}
-			.findRecipe-container.result-cont .box-inner{padding-top:60px;}
-			.findRecipe-container > .section-tit{margin-bottom: 20px;} 
-			.findRecipe-container .tit-h3{font-size: 20px;}
-			.findRecipe-container .tit-h2{font-size: 28px;}
-			.findRecipe-container .tit-h4{font-size: 16px; margin-bottom: 5px;}
-			.findRecipe-container .step-cont{padding:40px 0;}
-			.findRecipe-container .step-cont .step-progress{max-width:200px; margin:0 auto 20px;}
-			.findRecipe-container .step-cont .step-wr .card p{font-size: 18px; padding: 20px 10px;}
-			.findRecipe-container .step-cont .step-wr .left{width:48%;}
-			.findRecipe-container .step-cont .step-wr .right{width:48%; left:52%;}
-			.findRecipe-container .step-cont .step-wr .card{border-radius:15px;}
-			.findRecipe-container .step-cont .step-wr{height:420px; margin-top: 20px;}
-			.findRecipe-container .choice-cont .recipe-choice{height:420px; margin-top: 20px;}
-			.findRecipe-container .btn-wr a{font-size: 16px;}
- 
-			.findRecipe-container .choice-cont .recipe-choice .card p{font-size: 14px;}
-			.findRecipe-container .choice-cont .recipe-choice .card p span:after{height:12px; margin-left: 5px;}
-			.findRecipe-container.result-cont .next-btn{top:20px; right:20px; }
-			.findRecipe-container.result-cont .next-btn a{gap:10px;} 
+		@media screen and (max-width:990px) {
 
-			.findRecipe-container .box-tit p{font-size: 18px; margin-top: 10px;}
-			.findRecipe-container.result-cont .result-img{margin:20px auto;}
-			.findRecipe-container.result-cont .result-recipe .ingredients p{font-size: 16px;}
-			.findRecipe-container.result-cont .result-recipe .how-to-make ul li{font-size: 16px; margin:10px 0;}
-			.findRecipe-container.result-cont .result-recipe .how-to-make ul li span{font-size: 14px;}
+			/* main */
+			.findRecipe-container {
+				padding: 50px 0;
+			}
+
+			.findRecipe-container .box-inner {
+				width: 96%;
+				padding: 40px 0;
+			}
+
+			.findRecipe-container.result-cont .box-inner {
+				padding-top: 60px;
+			}
+
+			.findRecipe-container>.section-tit {
+				margin-bottom: 20px;
+			}
+
+			.findRecipe-container .tit-h3 {
+				font-size: 20px;
+			}
+
+			.findRecipe-container .tit-h2 {
+				font-size: 28px;
+			}
+
+			.findRecipe-container .tit-h4 {
+				font-size: 16px;
+				margin-bottom: 5px;
+			}
+
+			.findRecipe-container .step-cont {
+				padding: 40px 0;
+			}
+
+			.findRecipe-container .step-cont .step-progress {
+				max-width: 200px;
+				margin: 0 auto 20px;
+			}
+
+			.findRecipe-container .step-cont .step-wr .card p {
+				font-size: 18px;
+				padding: 20px 10px;
+			}
+
+			.findRecipe-container .step-cont .step-wr .left {
+				width: 48%;
+			}
+
+			.findRecipe-container .step-cont .step-wr .right {
+				width: 48%;
+				left: 52%;
+			}
+
+			.findRecipe-container .step-cont .step-wr .card {
+				border-radius: 15px;
+			}
+
+			.findRecipe-container .step-cont .step-wr {
+				height: 420px;
+				margin-top: 20px;
+			}
+
+			.findRecipe-container .choice-cont .recipe-choice {
+				height: 420px;
+				margin-top: 20px;
+			}
+
+			.findRecipe-container .btn-wr a {
+				font-size: 16px;
+			}
+
+			.findRecipe-container .choice-cont .recipe-choice .card p {
+				font-size: 14px;
+			}
+
+			.findRecipe-container .choice-cont .recipe-choice .card p span:after {
+				height: 12px;
+				margin-left: 5px;
+			}
+
+			.findRecipe-container.result-cont .next-btn {
+				top: 20px;
+				right: 20px;
+			}
+
+			.findRecipe-container.result-cont .next-btn a {
+				gap: 10px;
+			}
+
+			.findRecipe-container .box-tit p {
+				font-size: 18px;
+				margin-top: 10px;
+			}
+
+			.findRecipe-container.result-cont .result-img {
+				margin: 20px auto;
+			}
+
+			.findRecipe-container.result-cont .result-recipe .ingredients p {
+				font-size: 16px;
+			}
+
+			.findRecipe-container.result-cont .result-recipe .how-to-make ul li {
+				font-size: 16px;
+				margin: 10px 0;
+			}
+
+			.findRecipe-container.result-cont .result-recipe .how-to-make ul li span {
+				font-size: 14px;
+			}
 
 
 
-		} 
-		
-		@media screen and (max-width:480px) {    
-			.findRecipe-container .step-cont .step-wr{height:200px;}  
-			.findRecipe-container .choice-cont .recipe-choice{height:220px;}
-		} 
-		@media screen and (max-width:380px) {   
-			.findRecipe-container .step-cont .step-wr{height:160px;} 
+		}
+
+		@media screen and (max-width:480px) {
+			.findRecipe-container .step-cont .step-wr {
+				height: 200px;
+			}
+
+			.findRecipe-container .choice-cont .recipe-choice {
+				height: 220px;
+			}
+		}
+
+		@media screen and (max-width:380px) {
+			.findRecipe-container .step-cont .step-wr {
+				height: 160px;
+			}
 
 
-		} 
-		/* header,footer */  
+		}
+
+		/* header,footer */
 		@media screen and (max-width: 995px) {
 			.LoginDropdownButton__icon {
-				font-size:4.4em;
-				top:14px;
-				left:14px;
+				font-size: 4.4em;
+				top: 14px;
+				left: 14px;
 			}
 
 			.ResponsiveContainer {
@@ -305,7 +852,8 @@
 				font-size: .75em
 			}
 
-			.MiniBasketButton,.MiniBasketButtonGuest {
+			.MiniBasketButton,
+			.MiniBasketButtonGuest {
 				font-size: .875em;
 			}
 
@@ -317,7 +865,8 @@
 				font-size: 2.7rem
 			}
 
-			.t-sm-400-caps,.t-sm-400-sl-caps {
+			.t-sm-400-caps,
+			.t-sm-400-sl-caps {
 				font-size: 1em;
 				letter-spacing: -0.0625rem
 			}
@@ -344,7 +893,8 @@
 				font-size: 16px
 			}
 
-			nb-footer-logos img,nb-footer-logos svg {
+			nb-footer-logos img,
+			nb-footer-logos svg {
 				height: 1.5em
 			}
 
@@ -369,11 +919,13 @@
 				right: 1em
 			}
 
-			nb-footer-links button,nb-footer-links h3 {
+			nb-footer-links button,
+			nb-footer-links h3 {
 				padding: 1em 0
 			}
 
-			.t-xs-500,.t-xs-500-sl {
+			.t-xs-500,
+			.t-xs-500-sl {
 				font-size: .875em
 			}
 
@@ -448,12 +1000,14 @@
 				line-height: 1.5
 			}
 
-			.t-2xs-500,.t-2xs-500-sl {
+			.t-2xs-500,
+			.t-2xs-500-sl {
 				font-size: .75em;
 				letter-spacing: .0625em
 			}
 
-			.t-sm-400,.t-sm-400-sl {
+			.t-sm-400,
+			.t-sm-400-sl {
 				font-size: 1em
 			}
 
@@ -535,7 +1089,12 @@
 				font-size: 16px
 			}
 
-			.MiniBasketTotalTable__creditSubTotal,.MiniBasketTotalTable__creditSubTotal-value,.MiniBasketTotalTable__creditTotalPrice,.MiniBasketTotalTable__creditTotalPrice-value,.MiniBasketTotalTable__totalPrice,.MiniBasketTotalTable__totalPrice-value {
+			.MiniBasketTotalTable__creditSubTotal,
+			.MiniBasketTotalTable__creditSubTotal-value,
+			.MiniBasketTotalTable__creditTotalPrice,
+			.MiniBasketTotalTable__creditTotalPrice-value,
+			.MiniBasketTotalTable__totalPrice,
+			.MiniBasketTotalTable__totalPrice-value {
 				font-size: 1em
 			}
 
@@ -559,7 +1118,8 @@
 				font-size: .875em
 			}
 
-			.MiniBasketDropdown__Link-reorder,.MiniBasketDropdown__Link-shopping {
+			.MiniBasketDropdown__Link-reorder,
+			.MiniBasketDropdown__Link-shopping {
 				font-size: .875em
 			}
 
@@ -582,7 +1142,8 @@
 				margin-right: 1em
 			}
 
-			.t-xs-700,.t-xs-700-sl {
+			.t-xs-700,
+			.t-xs-700-sl {
 				font-size: .875em;
 				letter-spacing: .0625em
 			}
@@ -605,7 +1166,7 @@
 
 		@media screen and (max-width: 900px) {
 			.HeaderNavigationBarDropdown__item .HeaderNavigationBarDropdown__item-heading {
-				font-size:.875em
+				font-size: .875em
 			}
 
 			.HeaderNavigationBarDropdown__item .HeaderNavigationBarDropdown__medium-links-item {
@@ -727,7 +1288,7 @@
 
 		@media screen and (max-width: 767px) {
 			.Header__customer {
-				height:100%;
+				height: 100%;
 				font-size: 16px
 			}
 
@@ -743,10 +1304,6 @@
 				padding-top: 2em
 			}
 		}
-
-
-
-
 	</style>
 	<div id="main-container">
 		<main id="main">
@@ -810,11 +1367,12 @@
 											보다 부드럽고 시원하게 즐길 수 있는 레시피</p>
 									</div>
 									<div class="result-img" data-result-image>
-										<img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/chiaro_ol.jpg" alt="">
+										<img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/chiaro_ol.jpg"
+											alt="">
 									</div>
 									<div class="result-recipe">
 										<div class="ingredients">
-											<div class="tit-h3">INGREDIENTS</div> 
+											<div class="tit-h3">INGREDIENTS</div>
 											<p data-result-ingredients-desc>쉬크르 루(브라운 슈거) 2~3 스틱, 바닐라 시럽, 얼음
 												리빌 에스프레소 마일드</p>
 										</div>
@@ -834,7 +1392,8 @@
 												</li>
 												<li>
 													<strong>1.</strong>
-													쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장 자리에 슈거림을 만들어 준 뒤 <strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
+													쉬크르 루와 바닐라 시럽을 활용해 리빌 에스프레소 잔 가장 자리에 슈거림을 만들어 준 뒤
+													<strong>2.</strong>에 완성된 커피를 컵에 부어주세요.
 													<span>* * 샤케라토의 커피 거품을 보다 섬세하고 부드럽게 즐길 수 있도록 쉐이커의 하프
 														필터 부분으로 커피를 부어주세요.</span>
 												</li>
@@ -852,19 +1411,31 @@
 												</div>
 												<button type="button" class="plus svelte-1nhbbpw" button-plus></button>
 												<button type="button" class="buy svelte-1nhbbpw" button-add-cart>
-													<img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_cart.png" alt="">
+													<img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_cart.png"
+														alt="">
 												</button>
 											</fieldset>
 										</div>
-										<a href="#none" button-restart><img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_reset.png" alt="">다시하기</a>
-										<a href="#none" button-share><img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_link.png" alt="">공유하기</a>
+										<a href="#none" button-restart><img
+												src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_reset.png"
+												alt="">다시하기</a>
+										<a href="#none" button-share><img
+												src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_link.png"
+												alt="">공유하기</a>
 									</div>
 									<div class="next-btn" data-other-type>
-										<a href="#none"><img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/type_vl.png" alt=""><img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/btn_next.png" alt=""></a>
+										<a href="#none"><img
+												src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/type_vl.png"
+												alt=""><img
+												src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/btn_next.png"
+												alt=""></a>
 									</div>
 								</div>
 								<div class="btn-wr">
-									<a href="https://www.nespresso.com/kr/ko/nespresso-coffee-recipes" target="_blank">다른 레시피 보러가기 <img src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_right.png" alt=""></a>
+									<a href="https://www.nespresso.com/kr/ko/nespresso-coffee-recipes"
+										target="_blank">다른 레시피 보러가기 <img
+											src="https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ico_right.png"
+											alt=""></a>
 								</div>
 							</div>
 							<!-- 결과 end -->
@@ -965,18 +1536,18 @@
 				shareButton.addEventListener('click', this.share.bind(this));
 
 				plusButton.addEventListener('click', () => {
-					if(!this.stock){
-					alert('품절된 상품입니다.');
-					return;
-				}
+					if (!this.stock) {
+						alert('품절된 상품입니다.');
+						return;
+					}
 					skuCount.value = parseInt(skuCount.value) + 10;
 				});
 
 				minusButton.addEventListener('click', () => {
-					if(!this.stock){
-					alert('품절된 상품입니다.');
-					return;
-				}
+					if (!this.stock) {
+						alert('품절된 상품입니다.');
+						return;
+					}
 					if (parseInt(skuCount.value) > 1) {
 						skuCount.value = parseInt(skuCount.value) - 10;
 					}
@@ -1022,7 +1593,7 @@
 			}
 
 			addCart() {
-				if(!this.stock){
+				if (!this.stock) {
 					alert('품절된 상품입니다.');
 					return;
 				}
@@ -1047,6 +1618,14 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 			}
 
 			share() {
+				gtmDataObject.push({
+					event: 'local_event',
+					event_raised_by: 'local market',
+					local_event_category: 'find-my-recipe',
+					local_event_action: 'result-' + this.type + '-' + this.choiceData[this.stepResult][this.type].subTitle,
+					local_event_label: 'share'
+				});
+
 				// url copy
 				const url = window.location.href;
 				const tempElem = document.createElement('textarea');
@@ -1057,9 +1636,18 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				document.body.removeChild(tempElem);
 
 				alert('URL이 복사되었습니다.');
+
 			}
 
 			restart() {
+				gtmDataObject.push({
+					event: 'local_event',
+					event_raised_by: 'local market',
+					local_event_category: 'find-my-recipe',
+					local_event_action: 'result-' + this.type + '-' + this.choiceData[this.stepResult][this.type].subTitle,
+					local_event_label: 'restart'
+				});
+
 				this.step = 0;
 				this.stepResult = '';
 				this.status = 0;
@@ -1074,7 +1662,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 			}
 
 			async nextStep(direction) {
-				if(this.animation) return;
+				if (this.animation) return;
 				this.animation = true;
 				await new Promise((resolve) => {
 					const targetCard = this.el.stepCards.querySelector(`.${direction}`);
@@ -1183,7 +1771,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				const queryString = `result=${this.stepResult}&type=${this.type}`;
 				const url = `${window.location.origin}${window.location.pathname}?${queryString}`;
 				history.pushState({ path: url }, '', url);
-				
+
 				window.scrollTo(0, 0);
 			}
 
@@ -1191,21 +1779,21 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				return new Promise(resolve => {
 					let productFullId = 'erp.kr.b2c/prod/' + sku;
 					let result;
-					if(window.napi){
+					if (window.napi) {
 						window.napi.catalog().getStocks().then((dataStocks) => {
 							result = dataStocks[productFullId];
-							if(!result){
+							if (!result) {
 								this.stock = result;
 								this.el.addCartButton.style.filter = 'grayscale(100)';
 								this.el.addCartButton.style.cursor = 'not-allowed';
-							}else{
+							} else {
 								this.stock = result;
 								this.el.addCartButton.style.filter = 'none';
 								this.el.addCartButton.style.cursor = 'pointer';
 							}
 							resolve(result);
 						})
-					}else{
+					} else {
 						console.log('napi가 선언되지 않았습니다.');
 						result = false;
 						this.stock = result;
@@ -1297,15 +1885,29 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				right.appendChild(a2);
 
 				a.addEventListener('click', () => {
-					if(this.animation) return;
+					if (this.animation) return;
 					this.stepResult += cards[0].id;
 					this.nextStep('left');
+					gtmDataObject.push({
+						event: 'local_event',
+						event_raised_by: 'local market',
+						local_event_category: 'find-my-recipe',
+						local_event_action: 'step' + step,
+						local_event_label: cards[0].select
+					});
 				});
 
 				a2.addEventListener('click', () => {
-					if(this.animation) return;
+					if (this.animation) return;
 					this.stepResult += cards[1].id;
 					this.nextStep('right');
+					gtmDataObject.push({
+						event: 'local_event',
+						event_raised_by: 'local market',
+						local_event_category: 'find-my-recipe',
+						local_event_action: 'step' + step,
+						local_event_label: cards[1].select
+					});
 				});
 
 				stepCards.append(left, right);
@@ -1368,10 +1970,24 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 
 				div.addEventListener('click', () => {
 					this.finalStep('ol');
+					gtmDataObject.push({
+						event: 'local_event',
+						event_raised_by: 'local market',
+						local_event_category: 'find-my-recipe',
+						local_event_action: 'result',
+						local_event_label: 'result-ol-' + this.choiceData[this.stepResult].ol.subTitle
+					});
 				});
 
 				div2.addEventListener('click', () => {
 					this.finalStep('vl');
+					gtmDataObject.push({
+						event: 'local_event',
+						event_raised_by: 'local market',
+						local_event_category: 'find-my-recipe',
+						local_event_action: 'result',
+						local_event_label: 'result-vl-' + this.choiceData[this.stepResult].vl.subTitle
+					});
 				});
 
 				this.el.choiceCards.append(div, div2);
@@ -1412,7 +2028,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 
 				statusPages[this.status].style.display = 'block';
 
-				
+
 			}
 
 			renderOtherTypeButton() {
@@ -1450,11 +2066,13 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					cards: [
 						{
 							id: 'h',
+							select: 'hot',
 							text: '따뜻하게',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/hot.jpg',
 						},
 						{
 							id: 'i',
+							select: 'ice',
 							text: '차갑게',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/ice.jpg',
 						},
@@ -1463,13 +2081,15 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				{
 					title: '밀크 레시피로 즐기시나요?',
 					cards: [
-						{	
+						{
 							id: 'b',
+							select: 'black',
 							text: '블랙으로 깔끔하게',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/black.jpg',
 						},
 						{
 							id: 'm',
+							select: 'latte',
 							text: '우유와 함께 부드럽게',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/milk.jpg',
 						},
@@ -1480,11 +2100,13 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 					cards: [
 						{
 							id: 'f',
+							select: 'fruity',
 							text: '산뜻한(프루티)',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/fruity.jpg',
 						},
 						{
 							id: 'n',
+							select: 'nutty',
 							text: '고소한(너티)',
 							imgUrl: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/nutty.jpg',
 						},
@@ -1494,12 +2116,15 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 			result: {
 				ibf: {
 					ingredientsTitle: '산뜻하게 즐기는 아이스 블랙 커피 레시피',
+					ingredientsTitle_en: 'Refreshing black coffee recipe over ice',
 					ol: {
 						sku: '7748.40',
 						title: '아이스 자몽프레소 ',
+						title_en: 'ICED GRAPEFRUIT ESPRESSO ',
 						subTitle: 'ICED GRAPEFRUIT ESPRESSO',
 						desc: '나른한 오후에 만끽하는 청량함',
 						ingredientsDesc: '리스트레토/리스트레토 디카페나토 캡슐 1개, 쉬크르 루 1스틱, 자몽 시럽 10ml, 얼음 6조각 (조각 당 30g)',
+						ingredientsDesc_en: 'Ristretto/Ristretto Decaffeinato capsule 1, Grapefruit syrup 10ml, Brown sugar stick 1, Ice cubes 6',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/grapefruit_ol.jpg',
 						howToMake: [
 							`
@@ -1521,6 +2146,20 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                                 <span>
                                     * 종이 빨대로 휘저은 후 설탕까지 호로록 빨아들여 캡슐의 매력을 온전히 음미해 보세요.
                                 </span>
+                            </li>
+                        `,
+						],
+						howToMake_en: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                Pour 10ml grapefruit syrup and fill 2/3 of glass with ample ice.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                Brew 40ml espresso and add 1 stick of Brown sugar.
                             </li>
                         `,
 						],
@@ -1565,13 +2204,16 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				},
 				ibn: {
 					ingredientsTitle: '고소하게 즐기는 아이스 블랙 커피 레시피',
+					ingredientsTitle_en: 'Indulging black coffee recipe over ice',
 					ol: {
 						sku: '7586.40',
 						title: '마자그랑',
+						title_en: 'MAJAGRANG',
 						subTitle: 'MAJAGRANG',
 						desc: '고소함과 상큼함의 이색적인 조화',
 						ingredientsTitle: '볼루토',
 						ingredientsDesc: '볼루토/볼루토 디카페나토 캡슐 1개, 얼음 6조각 (조각 당 30g), 레몬청 40g, 탄산수 70ml',
+						ingredientsDesc_en: 'Volluto/Volluto Decaffeinato capsule 1, Lemon concentrate 40g, Sparkling water 70ml, Ice cubes 6',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/majagrang_ol.jpg',
 						howToMake: [
 							`
@@ -1590,6 +2232,26 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                             <li>
                                 <strong>3.</strong>
                                 그 위에 에스프레소(40ml)로 추출하여 디카페인 마자그랑을 늦은 오후에도 청량하게 즐겨보세요.
+                            </li>
+                        `,
+						],
+						howToMake_en: [
+							`
+                            <li>
+                                <strong>1.</strong>
+                                Place 40g of lemon concentrate and fill with ample ice.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>2.</strong>
+                                Pour 70ml of sparkling water in a Barista Recipe Glass Small.
+                            </li>
+                        `,
+							`
+                            <li>
+                                <strong>3.</strong>
+                                Brew 40ml espresso on top.
                             </li>
                         `,
 						],
@@ -1637,6 +2299,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				},
 				imf: {
 					ingredientsTitle: '산뜻하게 즐기는 아이스 밀크 커피 레시피',
+					ingredientsTitle_en: 'Refreshing milk coffee recipe over ice',
 					ol: {
 						sku: '7750.40',
 						title: '코코넛 돌체 라테',
@@ -1716,13 +2379,16 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				},
 				imn: {
 					ingredientsTitle: '고소하게 즐기는 아이스 밀크 커피 레시피',
+					ingredientsTitle_en: 'Indulging milk coffee recipe over ice',
 					ol: {
 						sku: '7738.40',
 						title: '카페 살렌티노',
+						title_en: 'CAFE SALENTINO',
 						subTitle: 'CAFE SALENTINO',
 						desc: '색다르게 즐기는 아이스 레시피',
 						ingredientsTitle: '이스탄불',
 						ingredientsDesc: '이스탄불 캡슐 1개, 얼음 6조각 (조각 당 30g), 아몬드 밀크 80ml',
+						ingredientsDesc_en: 'Istanbul capsule 1, Almond milk 80ml, Ice cubes 6',
 						resultImgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/salentino_ol.jpg',
 						howToMake: [
 							`
@@ -1793,6 +2459,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				},
 				hbf: {
 					ingredientsTitle: '산뜻하게 즐기는 따뜻한 블랙 커피 레시피',
+					ingredientsTitle_en: 'Refreshing black coffee recipe',
 					ol: {
 						sku: '7723.70',
 						title: '허니 블랙',
@@ -1813,7 +2480,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                                 <strong>2.</strong>
                                 그 위에 룽고(110ml)로 1개의 캡슐을 추출합니다. 
                             </li>
-                        `, 
+                        `,
 						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/honeyblack_ol.jpg',
 					},
@@ -1843,13 +2510,14 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 									* 취향에 따라 마실수록 상쾌해지는 아이스 아메리카노로 즐길 수 있어요. (얼음 가득 넣은 잔에 아이스&라테 모드로 추출)
                                 </span>
                             </li>
-                        `, 
+                        `,
 						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/peppermint_vl.jpg',
 					},
 				},
 				hbn: {
 					ingredientsTitle: '고소하게 즐기는 따뜻한 블랙 커피 레시피',
+					ingredientsTitle_en: 'Indulging black coffee recipe',
 					ol: {
 						sku: '7757.40',
 						title: '버터 스카치 아메리카노',
@@ -1898,13 +2566,14 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
                                     * 기호에 따라 슈거 시럽을 더해 보다 달콤하게 즐겨보세요. 
                                 </span>
                             </li>
-                        `, 
+                        `,
 						],
 						imgSrc: 'https://www.nespresso.com/shared_res/mos/free_html/kr/find-my-recipe/img/dolcericano_vl.jpg',
 					},
 				},
 				hmf: {
 					ingredientsTitle: '산뜻하게 즐기는 따뜻한 밀크 커피 레시피',
+					ingredientsTitle_en: 'Refreshing milk coffee recipe',
 					ol: {
 						sku: '7759.40',
 						title: '레몬 크림 라테',
@@ -1968,6 +2637,7 @@ SKU: ${this.choiceData[this.stepResult][this.type].sku}
 				},
 				hmn: {
 					ingredientsTitle: '고소하게 즐기는 따뜻한 밀크 커피 레시피',
+					ingredientsTitle_en: 'Indulging milk coffee recipe',
 					ol: {
 						sku: '7765.40',
 						title: '코코 리치 화이트',
